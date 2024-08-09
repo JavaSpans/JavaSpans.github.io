@@ -40,7 +40,9 @@
 <div class="Bbeian-info">
 	{{ __('')}}<a target="_blank" href="https://beian.miit.gov.cn/" style="color:#999;border-bottom:none;" rel="nofollow">赣ICP备2021009289号-1</a>
 
+
 </div>
+<div>	<a href="https://beian.mps.gov.cn/#/query/webSearch?code=36048202000074" style="color:#999;border-bottom:none; rel="noreferrer" target="_blank">赣公网安备36048202000074</a></div>
 <div class="copyright">
   <span class="author" itemprop="copyrightHolder">❤{{ theme.footer.copyright || config.author }}</span>
   <span class="with-love">
