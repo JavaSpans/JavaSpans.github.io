@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<script src="/live2d-widget/autoload.js"></script>
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="html,笔记," />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="html初步了解">
+<meta property="og:url" content="https://benat.cn/posts/d7e9d6a9.html">
+<meta property="og:site_name" content="学习笔记">
+<meta property="og:locale">
+<meta property="article:published_time" content="2021-05-17T09:40:44.487Z">
+<meta property="article:modified_time" content="2021-05-17T09:52:50.366Z">
+<meta property="article:author" content="JavaSpansHHT">
+<meta property="article:tag" content="html">
+<meta property="article:tag" content="笔记">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://benat.cn/posts/d7e9d6a9.html"/>
+
+
+
+
+
+  <title>html初步了解 | 学习笔记</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">学习笔记</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">记录学习的点点滴滴</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-link"></i> <br />
+            
+            友链
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://benat.cn/posts/d7e9d6a9.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学习笔记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">html初步了解</h1>
+        
+
+        <div class="post-meta">
+		 <div class="post-meta">
+		<!-- 置顶插件添加 开始 -->
+		
+		<!-- 置顶插件添加 结束 -->
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-05-17T17:40:44+08:00">
+                2021-05-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/html/" itemprop="url" rel="index">
+                    <span itemprop="name">html</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/d7e9d6a9.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/posts/d7e9d6a9.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读 <i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  7
+                </span>
+              
+            </div>
+          
+
+          
+              <div class="post-description">
+                   
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="html初步了解"><a href="#html初步了解" class="headerlink" title="html初步了解"></a>html初步了解</h3><h5 id="（1）PPT指出互联网中相关的一些专业术语。"><a href="#（1）PPT指出互联网中相关的一些专业术语。" class="headerlink" title="（1）PPT指出互联网中相关的一些专业术语。"></a>（1）PPT指出互联网中相关的一些专业术语。</h5><h5 id="（2）展示PPT，对“Internet网络、WWW、URL、DNS、HTTP、Web、W3C组织”等专业术语进行详细讲解，并举例说明。"><a href="#（2）展示PPT，对“Internet网络、WWW、URL、DNS、HTTP、Web、W3C组织”等专业术语进行详细讲解，并举例说明。" class="headerlink" title="（2）展示PPT，对“Internet网络、WWW、URL、DNS、HTTP、Web、W3C组织”等专业术语进行详细讲解，并举例说明。"></a>（2）展示PPT，对“Internet网络、WWW、URL、DNS、HTTP、Web、W3C组织”等专业术语进行详细讲解，并举例说明。</h5><h5 id="所谓Internet网络就是通常所说的互联网，是由一些使用公用语言互相通信的计算机连接而成的网络。简单地说，互联网就是将世界范围内不同国家、不同地区的众多计算机连接起来形成的结果。"><a href="#所谓Internet网络就是通常所说的互联网，是由一些使用公用语言互相通信的计算机连接而成的网络。简单地说，互联网就是将世界范围内不同国家、不同地区的众多计算机连接起来形成的结果。" class="headerlink" title="所谓Internet网络就是通常所说的互联网，是由一些使用公用语言互相通信的计算机连接而成的网络。简单地说，互联网就是将世界范围内不同国家、不同地区的众多计算机连接起来形成的结果。"></a>所谓Internet网络就是通常所说的互联网，是由一些使用公用语言互相通信的计算机连接而成的网络。简单地说，互联网就是将世界范围内不同国家、不同地区的众多计算机连接起来形成的结果。</h5><h5 id="互联网实现了全球信息资源的共享，形成了一个能够共同参与、相互交流的互动平台。通过互联网远在千里之外的朋友可以相互发送邮件、共同完成一项工作、共同娱乐。因此，互联网最大的成功之处并不在于技术层面，而在于对人类生活的影响，可以说互联网的出现是人类通信技术史上的一次革命。"><a href="#互联网实现了全球信息资源的共享，形成了一个能够共同参与、相互交流的互动平台。通过互联网远在千里之外的朋友可以相互发送邮件、共同完成一项工作、共同娱乐。因此，互联网最大的成功之处并不在于技术层面，而在于对人类生活的影响，可以说互联网的出现是人类通信技术史上的一次革命。" class="headerlink" title="互联网实现了全球信息资源的共享，形成了一个能够共同参与、相互交流的互动平台。通过互联网远在千里之外的朋友可以相互发送邮件、共同完成一项工作、共同娱乐。因此，互联网最大的成功之处并不在于技术层面，而在于对人类生活的影响，可以说互联网的出现是人类通信技术史上的一次革命。"></a>互联网实现了全球信息资源的共享，形成了一个能够共同参与、相互交流的互动平台。通过互联网远在千里之外的朋友可以相互发送邮件、共同完成一项工作、共同娱乐。因此，互联网最大的成功之处并不在于技术层面，而在于对人类生活的影响，可以说互联网的出现是人类通信技术史上的一次革命。</h5><h5 id="WWW（英文World-Wide-Web的缩写）中文译为“万维网”。但WWW不是网络，也不代表Internet，它只是Internet提供的一种服务——即网页浏览服务，我们上网时通过浏览器阅读网页信息就是在使用WWW服务。WWW是Internet上最主要的服务，其他许多网络功能，如网上聊天、网上购物等，都是基于WWW服务的。"><a href="#WWW（英文World-Wide-Web的缩写）中文译为“万维网”。但WWW不是网络，也不代表Internet，它只是Internet提供的一种服务——即网页浏览服务，我们上网时通过浏览器阅读网页信息就是在使用WWW服务。WWW是Internet上最主要的服务，其他许多网络功能，如网上聊天、网上购物等，都是基于WWW服务的。" class="headerlink" title="WWW（英文World Wide Web的缩写）中文译为“万维网”。但WWW不是网络，也不代表Internet，它只是Internet提供的一种服务——即网页浏览服务，我们上网时通过浏览器阅读网页信息就是在使用WWW服务。WWW是Internet上最主要的服务，其他许多网络功能，如网上聊天、网上购物等，都是基于WWW服务的。"></a>WWW（英文World Wide Web的缩写）中文译为“万维网”。但WWW不是网络，也不代表Internet，它只是Internet提供的一种服务——即网页浏览服务，我们上网时通过浏览器阅读网页信息就是在使用WWW服务。WWW是Internet上最主要的服务，其他许多网络功能，如网上聊天、网上购物等，都是基于WWW服务的。</h5><h5 id="URL（英文Uniform-Resource-Locator的缩写）中文译为“统一资源定位符”。URL其实就是Web地址，俗称“网址”。URL可以是“本地磁盘”，也可以是局域网上的某一台计算机，更多的是Internet上的站点，比如http-www-itcast-cn就是传智播客的网址"><a href="#URL（英文Uniform-Resource-Locator的缩写）中文译为“统一资源定位符”。URL其实就是Web地址，俗称“网址”。URL可以是“本地磁盘”，也可以是局域网上的某一台计算机，更多的是Internet上的站点，比如http-www-itcast-cn就是传智播客的网址" class="headerlink" title="URL（英文Uniform Resource Locator的缩写）中文译为“统一资源定位符”。URL其实就是Web地址，俗称“网址”。URL可以是“本地磁盘”，也可以是局域网上的某一台计算机，更多的是Internet上的站点，比如http://www.itcast.cn就是传智播客的网址"></a>URL（英文Uniform Resource Locator的缩写）中文译为“统一资源定位符”。URL其实就是Web地址，俗称“网址”。URL可以是“本地磁盘”，也可以是局域网上的某一台计算机，更多的是Internet上的站点，比如<a target="_blank" rel="noopener" href="http://www.itcast.cn就是传智播客的网址/">http://www.itcast.cn就是传智播客的网址</a></h5><h5 id="DNS-（英文Domain-Name-System的缩写）是域名解析系统。在Internet上域名与IP地址之间是一一对应的，域名（例如传智播客的域名www-itcast-cn）虽然便于人们记忆，但计算机只认识IP地址，将好记的域名转换成IP的过程被称为域名解析。DNS就是进行域名解析的系统。"><a href="#DNS-（英文Domain-Name-System的缩写）是域名解析系统。在Internet上域名与IP地址之间是一一对应的，域名（例如传智播客的域名www-itcast-cn）虽然便于人们记忆，但计算机只认识IP地址，将好记的域名转换成IP的过程被称为域名解析。DNS就是进行域名解析的系统。" class="headerlink" title="DNS （英文Domain Name System的缩写）是域名解析系统。在Internet上域名与IP地址之间是一一对应的，域名（例如传智播客的域名www.itcast.cn）虽然便于人们记忆，但计算机只认识IP地址，将好记的域名转换成IP的过程被称为域名解析。DNS就是进行域名解析的系统。"></a>DNS （英文Domain Name System的缩写）是域名解析系统。在Internet上域名与IP地址之间是一一对应的，域名（例如传智播客的域名<a target="_blank" rel="noopener" href="http://www.itcast.cn)虽然便于人们记忆,但计算机只认识ip地址,将好记的域名转换成ip的过程被称为域名解析.dns就是进行域名解析的系统./">www.itcast.cn）虽然便于人们记忆，但计算机只认识IP地址，将好记的域名转换成IP的过程被称为域名解析。DNS就是进行域名解析的系统。</a></h5><h5 id="HTTP-英文Hypertext-transfer-protocol的缩写-中文译为超文本传输协议。它是一种详细规定了浏览器和万维网服务器之间互相通信的规则。HTTP是非常可靠的协议，它具有强大的自检能力，所有用户请求的文件到达客户端时，一定是准确无误的。"><a href="#HTTP-英文Hypertext-transfer-protocol的缩写-中文译为超文本传输协议。它是一种详细规定了浏览器和万维网服务器之间互相通信的规则。HTTP是非常可靠的协议，它具有强大的自检能力，所有用户请求的文件到达客户端时，一定是准确无误的。" class="headerlink" title="HTTP (英文Hypertext transfer protocol的缩写) 中文译为超文本传输协议。它是一种详细规定了浏览器和万维网服务器之间互相通信的规则。HTTP是非常可靠的协议，它具有强大的自检能力，所有用户请求的文件到达客户端时，一定是准确无误的。"></a>HTTP (英文Hypertext transfer protocol的缩写) 中文译为超文本传输协议。它是一种详细规定了浏览器和万维网服务器之间互相通信的规则。HTTP是非常可靠的协议，它具有强大的自检能力，所有用户请求的文件到达客户端时，一定是准确无误的。</h5><h5 id="Web本意是蜘蛛网和网的意思。对于普通用户来说，Web仅仅只是一种环境——互联网的使用环境、氛围、内容等。而对于网站设计、制作者来说，它是一系列技术的复合总称（包括网站的前台布局、后台程序、美工、数据库开发等），我们称它为网页。"><a href="#Web本意是蜘蛛网和网的意思。对于普通用户来说，Web仅仅只是一种环境——互联网的使用环境、氛围、内容等。而对于网站设计、制作者来说，它是一系列技术的复合总称（包括网站的前台布局、后台程序、美工、数据库开发等），我们称它为网页。" class="headerlink" title="Web本意是蜘蛛网和网的意思。对于普通用户来说，Web仅仅只是一种环境——互联网的使用环境、氛围、内容等。而对于网站设计、制作者来说，它是一系列技术的复合总称（包括网站的前台布局、后台程序、美工、数据库开发等），我们称它为网页。"></a>Web本意是蜘蛛网和网的意思。对于普通用户来说，Web仅仅只是一种环境——互联网的使用环境、氛围、内容等。而对于网站设计、制作者来说，它是一系列技术的复合总称（包括网站的前台布局、后台程序、美工、数据库开发等），我们称它为网页。</h5><h5 id="W3C（英文World-Wide-Web-Consortium的缩写）中文译为“万维网联盟”。万维网联盟是国际最著名的标准化组织。W3C最重要的工作是发展Web规范，自1994年成立以来，已经发布了200多项影响深远的Web技术标准及实施指南，如超文本标记语言（HTML）、可扩展标记语言（XML）等。这些规范有效地促进了Web技术的兼容，对互联网的发展和应用起到了基础性和根本性的支撑作用。"><a href="#W3C（英文World-Wide-Web-Consortium的缩写）中文译为“万维网联盟”。万维网联盟是国际最著名的标准化组织。W3C最重要的工作是发展Web规范，自1994年成立以来，已经发布了200多项影响深远的Web技术标准及实施指南，如超文本标记语言（HTML）、可扩展标记语言（XML）等。这些规范有效地促进了Web技术的兼容，对互联网的发展和应用起到了基础性和根本性的支撑作用。" class="headerlink" title="W3C（英文World Wide Web Consortium的缩写）中文译为“万维网联盟”。万维网联盟是国际最著名的标准化组织。W3C最重要的工作是发展Web规范，自1994年成立以来，已经发布了200多项影响深远的Web技术标准及实施指南，如超文本标记语言（HTML）、可扩展标记语言（XML）等。这些规范有效地促进了Web技术的兼容，对互联网的发展和应用起到了基础性和根本性的支撑作用。"></a>W3C（英文World Wide Web Consortium的缩写）中文译为“万维网联盟”。万维网联盟是国际最著名的标准化组织。W3C最重要的工作是发展Web规范，自1994年成立以来，已经发布了200多项影响深远的Web技术标准及实施指南，如超文本标记语言（HTML）、可扩展标记语言（XML）等。这些规范有效地促进了Web技术的兼容，对互联网的发展和应用起到了基础性和根本性的支撑作用。</h5><h4 id=""><a href="#" class="headerlink" title=""></a></h4><h3 id="四、了解web标准"><a href="#四、了解web标准" class="headerlink" title="四、了解web标准"></a>四、了解web标准</h3><h5 id="（1）展示PPT对“Web标准”制定的原因及背景进行讲解。"><a href="#（1）展示PPT对“Web标准”制定的原因及背景进行讲解。" class="headerlink" title="（1）展示PPT对“Web标准”制定的原因及背景进行讲解。"></a>（1）展示PPT对“Web标准”制定的原因及背景进行讲解。</h5><h5 id="（2）Web标准并不是某一个标准，而是一系列标准的集合，主要包括结构（Structure）、表现（Presentation）和行为（Behavior）三个方面。分别对Web标准的“结构标准”、“表现标准”及“行为标准”进行详细讲解，并分别举例说明。"><a href="#（2）Web标准并不是某一个标准，而是一系列标准的集合，主要包括结构（Structure）、表现（Presentation）和行为（Behavior）三个方面。分别对Web标准的“结构标准”、“表现标准”及“行为标准”进行详细讲解，并分别举例说明。" class="headerlink" title="（2）Web标准并不是某一个标准，而是一系列标准的集合，主要包括结构（Structure）、表现（Presentation）和行为（Behavior）三个方面。分别对Web标准的“结构标准”、“表现标准”及“行为标准”进行详细讲解，并分别举例说明。"></a>（2）Web标准并不是某一个标准，而是一系列标准的集合，主要包括结构（Structure）、表现（Presentation）和行为（Behavior）三个方面。分别对Web标准的“结构标准”、“表现标准”及“行为标准”进行详细讲解，并分别举例说明。</h5><h4 id="结构标准"><a href="#结构标准" class="headerlink" title="结构标准"></a>结构标准</h4><h5 id="结构用于对网页元素进行整理和分类，主要包括XML和XHTML两个部分，具体区别如下："><a href="#结构用于对网页元素进行整理和分类，主要包括XML和XHTML两个部分，具体区别如下：" class="headerlink" title="结构用于对网页元素进行整理和分类，主要包括XML和XHTML两个部分，具体区别如下："></a>结构用于对网页元素进行整理和分类，主要包括XML和XHTML两个部分，具体区别如下：</h5><h5 id="XML（英文The-Extensible-Markup-Language-的缩写）是一种可扩展标记语言。XML最初的目的是为了弥补HTML的不足，它具有强大的扩展性，可用于数据的转换和描述。"><a href="#XML（英文The-Extensible-Markup-Language-的缩写）是一种可扩展标记语言。XML最初的目的是为了弥补HTML的不足，它具有强大的扩展性，可用于数据的转换和描述。" class="headerlink" title="XML（英文The Extensible Markup Language 的缩写）是一种可扩展标记语言。XML最初的目的是为了弥补HTML的不足，它具有强大的扩展性，可用于数据的转换和描述。"></a>XML（英文The Extensible Markup Language 的缩写）是一种可扩展标记语言。XML最初的目的是为了弥补HTML的不足，它具有强大的扩展性，可用于数据的转换和描述。</h5><h5 id="XHTML（英文The-Extensible-HyperText-Markup-Language的缩写）是可扩展超文本标识语言。XHTML是基于XML的标识语言，是在HTML4-0的基础上，用XML的规则对其进行扩展建立起来的，它实现了HTML向XML的过渡。"><a href="#XHTML（英文The-Extensible-HyperText-Markup-Language的缩写）是可扩展超文本标识语言。XHTML是基于XML的标识语言，是在HTML4-0的基础上，用XML的规则对其进行扩展建立起来的，它实现了HTML向XML的过渡。" class="headerlink" title="XHTML（英文The Extensible HyperText Markup Language的缩写）是可扩展超文本标识语言。XHTML是基于XML的标识语言，是在HTML4.0的基础上，用XML的规则对其进行扩展建立起来的，它实现了HTML向XML的过渡。"></a>XHTML（英文The Extensible HyperText Markup Language的缩写）是可扩展超文本标识语言。XHTML是基于XML的标识语言，是在HTML4.0的基础上，用XML的规则对其进行扩展建立起来的，它实现了HTML向XML的过渡。</h5><h4 id="表现标准"><a href="#表现标准" class="headerlink" title="表现标准"></a>表现标准</h4><h5 id="表现用于设置网页元素的版式、颜色、大小等外观样式，主要指的是CSS，具体介绍如下："><a href="#表现用于设置网页元素的版式、颜色、大小等外观样式，主要指的是CSS，具体介绍如下：" class="headerlink" title="表现用于设置网页元素的版式、颜色、大小等外观样式，主要指的是CSS，具体介绍如下："></a>表现用于设置网页元素的版式、颜色、大小等外观样式，主要指的是CSS，具体介绍如下：</h5><h5 id="CSS（英文Cascading-Style-Sheet的缩写）是层叠样式表。CSS标准建立的目的是以CSS为基础进行网页布局，控制网页的表现。CSS布局与XHTML结构语言相结合，可以实现表现与结构的分离，使网站的访问及维护更加容易。"><a href="#CSS（英文Cascading-Style-Sheet的缩写）是层叠样式表。CSS标准建立的目的是以CSS为基础进行网页布局，控制网页的表现。CSS布局与XHTML结构语言相结合，可以实现表现与结构的分离，使网站的访问及维护更加容易。" class="headerlink" title="CSS（英文Cascading Style Sheet的缩写）是层叠样式表。CSS标准建立的目的是以CSS为基础进行网页布局，控制网页的表现。CSS布局与XHTML结构语言相结合，可以实现表现与结构的分离，使网站的访问及维护更加容易。"></a>CSS（英文Cascading Style Sheet的缩写）是层叠样式表。CSS标准建立的目的是以CSS为基础进行网页布局，控制网页的表现。CSS布局与XHTML结构语言相结合，可以实现表现与结构的分离，使网站的访问及维护更加容易。</h5><h4 id="行为标准"><a href="#行为标准" class="headerlink" title="行为标准"></a>行为标准</h4><h5 id="行为是指网页模型的定义及交互的编写，主要包括DOM和ECMAScript两个部分。具体区别如下："><a href="#行为是指网页模型的定义及交互的编写，主要包括DOM和ECMAScript两个部分。具体区别如下：" class="headerlink" title="行为是指网页模型的定义及交互的编写，主要包括DOM和ECMAScript两个部分。具体区别如下："></a>行为是指网页模型的定义及交互的编写，主要包括DOM和ECMAScript两个部分。具体区别如下：</h5><h5 id="DOM（英文Document-Object-Model的缩写）是文档对象模型。W3C-文档对象模型-（DOM）-是中立于平台和语言的接口，它允许程序和脚本动态地访问和更新文档的内容、结构和样式。"><a href="#DOM（英文Document-Object-Model的缩写）是文档对象模型。W3C-文档对象模型-（DOM）-是中立于平台和语言的接口，它允许程序和脚本动态地访问和更新文档的内容、结构和样式。" class="headerlink" title="DOM（英文Document Object Model的缩写）是文档对象模型。W3C 文档对象模型 （DOM） 是中立于平台和语言的接口，它允许程序和脚本动态地访问和更新文档的内容、结构和样式。"></a>DOM（英文Document Object Model的缩写）是文档对象模型。W3C 文档对象模型 （DOM） 是中立于平台和语言的接口，它允许程序和脚本动态地访问和更新文档的内容、结构和样式。</h5><h5 id="ECMAScript是ECMA（英文European-Computer-Manufacturers-Association的缩写）国际以JavaScript为基础制定的标准脚本语言。JavaScript是一种基于对象和事件驱动，并具有相对安全性的客户端脚本语言，广泛用于Web开发，常用来给HTML网页添加动态功能，比如响应用户的各种操作。"><a href="#ECMAScript是ECMA（英文European-Computer-Manufacturers-Association的缩写）国际以JavaScript为基础制定的标准脚本语言。JavaScript是一种基于对象和事件驱动，并具有相对安全性的客户端脚本语言，广泛用于Web开发，常用来给HTML网页添加动态功能，比如响应用户的各种操作。" class="headerlink" title="ECMAScript是ECMA（英文European Computer Manufacturers Association的缩写）国际以JavaScript为基础制定的标准脚本语言。JavaScript是一种基于对象和事件驱动，并具有相对安全性的客户端脚本语言，广泛用于Web开发，常用来给HTML网页添加动态功能，比如响应用户的各种操作。"></a>ECMAScript是ECMA（英文European Computer Manufacturers Association的缩写）国际以JavaScript为基础制定的标准脚本语言。JavaScript是一种基于对象和事件驱动，并具有相对安全性的客户端脚本语言，广泛用于Web开发，常用来给HTML网页添加动态功能，比如响应用户的各种操作。</h5><h4 id="五、HTML简介"><a href="#五、HTML简介" class="headerlink" title="五、HTML简介"></a>五、HTML简介</h4><h5 id="（1）展示PPT对“HTML语言”的概念及作用进行简单介绍。"><a href="#（1）展示PPT对“HTML语言”的概念及作用进行简单介绍。" class="headerlink" title="（1）展示PPT对“HTML语言”的概念及作用进行简单介绍。"></a>（1）展示PPT对“HTML语言”的概念及作用进行简单介绍。</h5><h5 id="HTML（英文Hyper-Text-Markup-Language的缩写）中文译为“超文本标记语言”，主要是通过HTML标记对网页中的文本、图片、声音等内容进行描述。HTML提供了许多标记，如段落标记、标题标记、超链接标记、图片标记等，网页中需要定义什么内容，就用相应的HTML标记描述即可。"><a href="#HTML（英文Hyper-Text-Markup-Language的缩写）中文译为“超文本标记语言”，主要是通过HTML标记对网页中的文本、图片、声音等内容进行描述。HTML提供了许多标记，如段落标记、标题标记、超链接标记、图片标记等，网页中需要定义什么内容，就用相应的HTML标记描述即可。" class="headerlink" title="HTML（英文Hyper Text Markup Language的缩写）中文译为“超文本标记语言”，主要是通过HTML标记对网页中的文本、图片、声音等内容进行描述。HTML提供了许多标记，如段落标记、标题标记、超链接标记、图片标记等，网页中需要定义什么内容，就用相应的HTML标记描述即可。"></a>HTML（英文Hyper Text Markup Language的缩写）中文译为“超文本标记语言”，主要是通过HTML标记对网页中的文本、图片、声音等内容进行描述。HTML提供了许多标记，如段落标记、标题标记、超链接标记、图片标记等，网页中需要定义什么内容，就用相应的HTML标记描述即可。</h5><h5 id="HTML之所以称为超文本标记语言，不仅是因为它通过标记描述网页内容，同时也由于文本中包含了所谓的“超级链接”点。通过超链接将网站与网页以及各种网页元素链接起来，构成了丰富多彩的Web页面。"><a href="#HTML之所以称为超文本标记语言，不仅是因为它通过标记描述网页内容，同时也由于文本中包含了所谓的“超级链接”点。通过超链接将网站与网页以及各种网页元素链接起来，构成了丰富多彩的Web页面。" class="headerlink" title="HTML之所以称为超文本标记语言，不仅是因为它通过标记描述网页内容，同时也由于文本中包含了所谓的“超级链接”点。通过超链接将网站与网页以及各种网页元素链接起来，构成了丰富多彩的Web页面。"></a>HTML之所以称为超文本标记语言，不仅是因为它通过标记描述网页内容，同时也由于文本中包含了所谓的“超级链接”点。通过超链接将网站与网页以及各种网页元素链接起来，构成了丰富多彩的Web页面。</h5><h5 id="（2）通过查看“百度”网页的源代码，分析HTML语言中包含的标记。"><a href="#（2）通过查看“百度”网页的源代码，分析HTML语言中包含的标记。" class="headerlink" title="（2）通过查看“百度”网页的源代码，分析HTML语言中包含的标记。"></a>（2）通过查看“百度”网页的源代码，分析HTML语言中包含的标记。</h5><h5 id="（3）展示PPT对“HTML语言发展的历程”进行讲解，并指出各个版本中HTML标记的变化。HTML语言发展至今，经历了六个版本，这个过程中新增了许多HTML标记，同时也淘汰了一些标记，具体历程如下："><a href="#（3）展示PPT对“HTML语言发展的历程”进行讲解，并指出各个版本中HTML标记的变化。HTML语言发展至今，经历了六个版本，这个过程中新增了许多HTML标记，同时也淘汰了一些标记，具体历程如下：" class="headerlink" title="（3）展示PPT对“HTML语言发展的历程”进行讲解，并指出各个版本中HTML标记的变化。HTML语言发展至今，经历了六个版本，这个过程中新增了许多HTML标记，同时也淘汰了一些标记，具体历程如下："></a>（3）展示PPT对“HTML语言发展的历程”进行讲解，并指出各个版本中HTML标记的变化。HTML语言发展至今，经历了六个版本，这个过程中新增了许多HTML标记，同时也淘汰了一些标记，具体历程如下：</h5><h5 id="超文本标记语言（第一版）——在1993年6月作为互联网工程工作小组（IETF）工作草案发布。"><a href="#超文本标记语言（第一版）——在1993年6月作为互联网工程工作小组（IETF）工作草案发布。" class="headerlink" title="超文本标记语言（第一版）——在1993年6月作为互联网工程工作小组（IETF）工作草案发布。"></a>超文本标记语言（第一版）——在1993年6月作为互联网工程工作小组（IETF）工作草案发布。</h5><h5 id="HTML-2-0——1995年11月作为RFC-1866发布，在RFC-2854于2000年6月发布之后被宣布已经过时。"><a href="#HTML-2-0——1995年11月作为RFC-1866发布，在RFC-2854于2000年6月发布之后被宣布已经过时。" class="headerlink" title="HTML 2.0——1995年11月作为RFC 1866发布，在RFC 2854于2000年6月发布之后被宣布已经过时。"></a>HTML 2.0——1995年11月作为RFC 1866发布，在RFC 2854于2000年6月发布之后被宣布已经过时。</h5><h5 id="HTML-3-2——1997年1月14日，W3C推荐标准。"><a href="#HTML-3-2——1997年1月14日，W3C推荐标准。" class="headerlink" title="HTML 3.2——1997年1月14日，W3C推荐标准。"></a>HTML 3.2——1997年1月14日，W3C推荐标准。</h5><h5 id="HTML-4-0——1997年12月18日，W3C推荐标准。"><a href="#HTML-4-0——1997年12月18日，W3C推荐标准。" class="headerlink" title="HTML 4.0——1997年12月18日，W3C推荐标准。"></a>HTML 4.0——1997年12月18日，W3C推荐标准。</h5><h5 id="HTML-4-01（微小改进）——1999年12月24日，W3C推荐标准。"><a href="#HTML-4-01（微小改进）——1999年12月24日，W3C推荐标准。" class="headerlink" title="HTML 4.01（微小改进）——1999年12月24日，W3C推荐标准。"></a>HTML 4.01（微小改进）——1999年12月24日，W3C推荐标准。</h5><h5 id="HTML-5的第一份正式草案于2008年1月22日公布，2014年10月底定稿。"><a href="#HTML-5的第一份正式草案于2008年1月22日公布，2014年10月底定稿。" class="headerlink" title="HTML 5的第一份正式草案于2008年1月22日公布，2014年10月底定稿。"></a>HTML 5的第一份正式草案于2008年1月22日公布，2014年10月底定稿。</h5><h4 id="六、CSS简介"><a href="#六、CSS简介" class="headerlink" title="六、CSS简介"></a>六、CSS简介</h4><h5 id="（1）展示PPT对“CSS语言”的概念进行简单介绍。"><a href="#（1）展示PPT对“CSS语言”的概念进行简单介绍。" class="headerlink" title="（1）展示PPT对“CSS语言”的概念进行简单介绍。"></a>（1）展示PPT对“CSS语言”的概念进行简单介绍。</h5><h5 id="CSS通常称为CSS样式或样式表，主要用于设置HTML页面中的文本内容（字体、大小、对齐方式等）、图片的外形（宽高、边框样式、边距等）以及版面的布局等外观显示样式。"><a href="#CSS通常称为CSS样式或样式表，主要用于设置HTML页面中的文本内容（字体、大小、对齐方式等）、图片的外形（宽高、边框样式、边距等）以及版面的布局等外观显示样式。" class="headerlink" title="CSS通常称为CSS样式或样式表，主要用于设置HTML页面中的文本内容（字体、大小、对齐方式等）、图片的外形（宽高、边框样式、边距等）以及版面的布局等外观显示样式。"></a>CSS通常称为CSS样式或样式表，主要用于设置HTML页面中的文本内容（字体、大小、对齐方式等）、图片的外形（宽高、边框样式、边距等）以及版面的布局等外观显示样式。</h5><h5 id="（2）展示PPT，对CSS语言的作用及发展历程进行讲解，并对CSS控制的网页效果进行展示。"><a href="#（2）展示PPT，对CSS语言的作用及发展历程进行讲解，并对CSS控制的网页效果进行展示。" class="headerlink" title="（2）展示PPT，对CSS语言的作用及发展历程进行讲解，并对CSS控制的网页效果进行展示。"></a>（2）展示PPT，对CSS语言的作用及发展历程进行讲解，并对CSS控制的网页效果进行展示。</h5><h5 id="-1"><a href="#-1" class="headerlink" title=""></a></h5><h4 id="七、JavaScript简介"><a href="#七、JavaScript简介" class="headerlink" title="七、JavaScript简介"></a>七、JavaScript简介</h4><h5 id="（1）展示PPT对“JavaScript语言”的概念进行简单介绍。"><a href="#（1）展示PPT对“JavaScript语言”的概念进行简单介绍。" class="headerlink" title="（1）展示PPT对“JavaScript语言”的概念进行简单介绍。"></a>（1）展示PPT对“JavaScript语言”的概念进行简单介绍。</h5><h5 id="JavaScript是Web页面中的一种脚本语言，通过JavaScript可以将静态页面转变成支持用户交互并响应相应事件的动态页面。"><a href="#JavaScript是Web页面中的一种脚本语言，通过JavaScript可以将静态页面转变成支持用户交互并响应相应事件的动态页面。" class="headerlink" title="JavaScript是Web页面中的一种脚本语言，通过JavaScript可以将静态页面转变成支持用户交互并响应相应事件的动态页面。"></a>JavaScript是Web页面中的一种脚本语言，通过JavaScript可以将静态页面转变成支持用户交互并响应相应事件的动态页面。</h5><h5 id="（2）展示PPT，对JavaScript语言的作用及发展历程进行讲解，并对JavaScript控制的网页效果进行展示。"><a href="#（2）展示PPT，对JavaScript语言的作用及发展历程进行讲解，并对JavaScript控制的网页效果进行展示。" class="headerlink" title="（2）展示PPT，对JavaScript语言的作用及发展历程进行讲解，并对JavaScript控制的网页效果进行展示。"></a>（2）展示PPT，对JavaScript语言的作用及发展历程进行讲解，并对JavaScript控制的网页效果进行展示。</h5>
+      
+    </div>
+    
+    
+    
+	  <div>
+    
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="../js/src/jquery-1.7.1.min.js"></script>
+  <script src="../js/src/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../css/sweetalert.mini.css">
+
+
+  </p>
+  <p style="text-align:center;color:#bfbfbf;"> <i class="fa fa-creative-commons"></i><span style="text-align:center;color:#bfbfbf;"> 版权声明：</span> 本网站所有文章除特别声明外，著作权归作者所有。转载请注明出处！</p>  
+</div>
+
+    
+	  </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="../images/wechat.png" alt=" 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+		<div> <div>
+ <div style="text-align:center;color:#bfbfbf;font-size:16px;">
+	<span>-------- 本文结束 </span> 
+		<i class="fa fa-paw"></i> 
+			<span> 感谢阅读 --------</span> 
+			</div> 
+			
+			</div> </div>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/html/" rel="tag"><i class="fa fa-tag"></i> html</a>
+          
+            <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"><i class="fa fa-tag"></i> 笔记</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/a0b50c75.html" rel="next" title="递归">
+                <i class="fa fa-chevron-left"></i> 递归
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/1a147173.html" rel="prev" title="html基础">
+                html基础 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="" />
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">82</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#html%E5%88%9D%E6%AD%A5%E4%BA%86%E8%A7%A3"><span class="nav-number">1.</span> <span class="nav-text">html初步了解</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%EF%BC%881%EF%BC%89PPT%E6%8C%87%E5%87%BA%E4%BA%92%E8%81%94%E7%BD%91%E4%B8%AD%E7%9B%B8%E5%85%B3%E7%9A%84%E4%B8%80%E4%BA%9B%E4%B8%93%E4%B8%9A%E6%9C%AF%E8%AF%AD%E3%80%82"><span class="nav-number">1.0.1.</span> <span class="nav-text">（1）PPT指出互联网中相关的一些专业术语。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%EF%BC%882%EF%BC%89%E5%B1%95%E7%A4%BAPPT%EF%BC%8C%E5%AF%B9%E2%80%9CInternet%E7%BD%91%E7%BB%9C%E3%80%81WWW%E3%80%81URL%E3%80%81DNS%E3%80%81HTTP%E3%80%81Web%E3%80%81W3C%E7%BB%84%E7%BB%87%E2%80%9D%E7%AD%89%E4%B8%93%E4%B8%9A%E6%9C%AF%E8%AF%AD%E8%BF%9B%E8%A1%8C%E8%AF%A6%E7%BB%86%E8%AE%B2%E8%A7%A3%EF%BC%8C%E5%B9%B6%E4%B8%BE%E4%BE%8B%E8%AF%B4%E6%98%8E%E3%80%82"><span class="nav-number">1.0.2.</span> <span class="nav-text">（2）展示PPT，对“Internet网络、WWW、URL、DNS、HTTP、Web、W3C组织”等专业术语进行详细讲解，并举例说明。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%89%80%E8%B0%93Internet%E7%BD%91%E7%BB%9C%E5%B0%B1%E6%98%AF%E9%80%9A%E5%B8%B8%E6%89%80%E8%AF%B4%E7%9A%84%E4%BA%92%E8%81%94%E7%BD%91%EF%BC%8C%E6%98%AF%E7%94%B1%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E5%85%AC%E7%94%A8%E8%AF%AD%E8%A8%80%E4%BA%92%E7%9B%B8%E9%80%9A%E4%BF%A1%E7%9A%84%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%BF%9E%E6%8E%A5%E8%80%8C%E6%88%90%E7%9A%84%E7%BD%91%E7%BB%9C%E3%80%82%E7%AE%80%E5%8D%95%E5%9C%B0%E8%AF%B4%EF%BC%8C%E4%BA%92%E8%81%94%E7%BD%91%E5%B0%B1%E6%98%AF%E5%B0%86%E4%B8%96%E7%95%8C%E8%8C%83%E5%9B%B4%E5%86%85%E4%B8%8D%E5%90%8C%E5%9B%BD%E5%AE%B6%E3%80%81%E4%B8%8D%E5%90%8C%E5%9C%B0%E5%8C%BA%E7%9A%84%E4%BC%97%E5%A4%9A%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%BF%9E%E6%8E%A5%E8%B5%B7%E6%9D%A5%E5%BD%A2%E6%88%90%E7%9A%84%E7%BB%93%E6%9E%9C%E3%80%82"><span class="nav-number">1.0.3.</span> <span class="nav-text">所谓Internet网络就是通常所说的互联网，是由一些使用公用语言互相通信的计算机连接而成的网络。简单地说，互联网就是将世界范围内不同国家、不同地区的众多计算机连接起来形成的结果。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BA%92%E8%81%94%E7%BD%91%E5%AE%9E%E7%8E%B0%E4%BA%86%E5%85%A8%E7%90%83%E4%BF%A1%E6%81%AF%E8%B5%84%E6%BA%90%E7%9A%84%E5%85%B1%E4%BA%AB%EF%BC%8C%E5%BD%A2%E6%88%90%E4%BA%86%E4%B8%80%E4%B8%AA%E8%83%BD%E5%A4%9F%E5%85%B1%E5%90%8C%E5%8F%82%E4%B8%8E%E3%80%81%E7%9B%B8%E4%BA%92%E4%BA%A4%E6%B5%81%E7%9A%84%E4%BA%92%E5%8A%A8%E5%B9%B3%E5%8F%B0%E3%80%82%E9%80%9A%E8%BF%87%E4%BA%92%E8%81%94%E7%BD%91%E8%BF%9C%E5%9C%A8%E5%8D%83%E9%87%8C%E4%B9%8B%E5%A4%96%E7%9A%84%E6%9C%8B%E5%8F%8B%E5%8F%AF%E4%BB%A5%E7%9B%B8%E4%BA%92%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6%E3%80%81%E5%85%B1%E5%90%8C%E5%AE%8C%E6%88%90%E4%B8%80%E9%A1%B9%E5%B7%A5%E4%BD%9C%E3%80%81%E5%85%B1%E5%90%8C%E5%A8%B1%E4%B9%90%E3%80%82%E5%9B%A0%E6%AD%A4%EF%BC%8C%E4%BA%92%E8%81%94%E7%BD%91%E6%9C%80%E5%A4%A7%E7%9A%84%E6%88%90%E5%8A%9F%E4%B9%8B%E5%A4%84%E5%B9%B6%E4%B8%8D%E5%9C%A8%E4%BA%8E%E6%8A%80%E6%9C%AF%E5%B1%82%E9%9D%A2%EF%BC%8C%E8%80%8C%E5%9C%A8%E4%BA%8E%E5%AF%B9%E4%BA%BA%E7%B1%BB%E7%94%9F%E6%B4%BB%E7%9A%84%E5%BD%B1%E5%93%8D%EF%BC%8C%E5%8F%AF%E4%BB%A5%E8%AF%B4%E4%BA%92%E8%81%94%E7%BD%91%E7%9A%84%E5%87%BA%E7%8E%B0%E6%98%AF%E4%BA%BA%E7%B1%BB%E9%80%9A%E4%BF%A1%E6%8A%80%E6%9C%AF%E5%8F%B2%E4%B8%8A%E7%9A%84%E4%B8%80%E6%AC%A1%E9%9D%A9%E5%91%BD%E3%80%82"><span class="nav-number">1.0.4.</span> <span class="nav-text">互联网实现了全球信息资源的共享，形成了一个能够共同参与、相互交流的互动平台。通过互联网远在千里之外的朋友可以相互发送邮件、共同完成一项工作、共同娱乐。因此，互联网最大的成功之处并不在于技术层面，而在于对人类生活的影响，可以说互联网的出现是人类通信技术史上的一次革命。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#WWW%EF%BC%88%E8%8B%B1%E6%96%87World-Wide-Web%E7%9A%84%E7%BC%A9%E5%86%99%EF%BC%89%E4%B8%AD%E6%96%87%E8%AF%91%E4%B8%BA%E2%80%9C%E4%B8%87%E7%BB%B4%E7%BD%91%E2%80%9D%E3%80%82%E4%BD%86WWW%E4%B8%8D%E6%98%AF%E7%BD%91%E7%BB%9C%EF%BC%8C%E4%B9%9F%E4%B8%8D%E4%BB%A3%E8%A1%A8Internet%EF%BC%8C%E5%AE%83%E5%8F%AA%E6%98%AFInternet%E6%8F%90%E4%BE%9B%E7%9A%84%E4%B8%80%E7%A7%8D%E6%9C%8D%E5%8A%A1%E2%80%94%E2%80%94%E5%8D%B3%E7%BD%91%E9%A1%B5%E6%B5%8F%E8%A7%88%E6%9C%8D%E5%8A%A1%EF%BC%8C%E6%88%91%E4%BB%AC%E4%B8%8A%E7%BD%91%E6%97%B6%E9%80%9A%E8%BF%87%E6%B5%8F%E8%A7%88%E5%99%A8%E9%98%85%E8%AF%BB%E7%BD%91%E9%A1%B5%E4%BF%A1%E6%81%AF%E5%B0%B1%E6%98%AF%E5%9C%A8%E4%BD%BF%E7%94%A8WWW%E6%9C%8D%E5%8A%A1%E3%80%82WWW%E6%98%AFInternet%E4%B8%8A%E6%9C%80%E4%B8%BB%E8%A6%81%E7%9A%84%E6%9C%8D%E5%8A%A1%EF%BC%8C%E5%85%B6%E4%BB%96%E8%AE%B8%E5%A4%9A%E7%BD%91%E7%BB%9C%E5%8A%9F%E8%83%BD%EF%BC%8C%E5%A6%82%E7%BD%91%E4%B8%8A%E8%81%8A%E5%A4%A9%E3%80%81%E7%BD%91%E4%B8%8A%E8%B4%AD%E7%89%A9%E7%AD%89%EF%BC%8C%E9%83%BD%E6%98%AF%E5%9F%BA%E4%BA%8EWWW%E6%9C%8D%E5%8A%A1%E7%9A%84%E3%80%82"><span class="nav-number">1.0.5.</span> <span class="nav-text">WWW（英文World Wide Web的缩写）中文译为“万维网”。但WWW不是网络，也不代表Internet，它只是Internet提供的一种服务——即网页浏览服务，我们上网时通过浏览器阅读网页信息就是在使用WWW服务。WWW是Internet上最主要的服务，其他许多网络功能，如网上聊天、网上购物等，都是基于WWW服务的。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#URL%EF%BC%88%E8%8B%B1%E6%96%87Uniform-Resource-Locator%E7%9A%84%E7%BC%A9%E5%86%99%EF%BC%89%E4%B8%AD%E6%96%87%E8%AF%91%E4%B8%BA%E2%80%9C%E7%BB%9F%E4%B8%80%E8%B5%84%E6%BA%90%E5%AE%9A%E4%BD%8D%E7%AC%A6%E2%80%9D%E3%80%82URL%E5%85%B6%E5%AE%9E%E5%B0%B1%E6%98%AFWeb%E5%9C%B0%E5%9D%80%EF%BC%8C%E4%BF%97%E7%A7%B0%E2%80%9C%E7%BD%91%E5%9D%80%E2%80%9D%E3%80%82URL%E5%8F%AF%E4%BB%A5%E6%98%AF%E2%80%9C%E6%9C%AC%E5%9C%B0%E7%A3%81%E7%9B%98%E2%80%9D%EF%BC%8C%E4%B9%9F%E5%8F%AF%E4%BB%A5%E6%98%AF%E5%B1%80%E5%9F%9F%E7%BD%91%E4%B8%8A%E7%9A%84%E6%9F%90%E4%B8%80%E5%8F%B0%E8%AE%A1%E7%AE%97%E6%9C%BA%EF%BC%8C%E6%9B%B4%E5%A4%9A%E7%9A%84%E6%98%AFInternet%E4%B8%8A%E7%9A%84%E7%AB%99%E7%82%B9%EF%BC%8C%E6%AF%94%E5%A6%82http-www-itcast-cn%E5%B0%B1%E6%98%AF%E4%BC%A0%E6%99%BA%E6%92%AD%E5%AE%A2%E7%9A%84%E7%BD%91%E5%9D%80"><span class="nav-number">1.0.6.</span> <span class="nav-text">URL（英文Uniform Resource Locator的缩写）中文译为“统一资源定位符”。URL其实就是Web地址，俗称“网址”。URL可以是“本地磁盘”，也可以是局域网上的某一台计算机，更多的是Internet上的站点，比如http:&#x2F;&#x2F;www.itcast.cn就是传智播客的网址</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#DNS-%EF%BC%88%E8%8B%B1%E6%96%87Domain-Name-System%E7%9A%84%E7%BC%A9%E5%86%99%EF%BC%89%E6%98%AF%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90%E7%B3%BB%E7%BB%9F%E3%80%82%E5%9C%A8Internet%E4%B8%8A%E5%9F%9F%E5%90%8D%E4%B8%8EIP%E5%9C%B0%E5%9D%80%E4%B9%8B%E9%97%B4%E6%98%AF%E4%B8%80%E4%B8%80%E5%AF%B9%E5%BA%94%E7%9A%84%EF%BC%8C%E5%9F%9F%E5%90%8D%EF%BC%88%E4%BE%8B%E5%A6%82%E4%BC%A0%E6%99%BA%E6%92%AD%E5%AE%A2%E7%9A%84%E5%9F%9F%E5%90%8Dwww-itcast-cn%EF%BC%89%E8%99%BD%E7%84%B6%E4%BE%BF%E4%BA%8E%E4%BA%BA%E4%BB%AC%E8%AE%B0%E5%BF%86%EF%BC%8C%E4%BD%86%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8F%AA%E8%AE%A4%E8%AF%86IP%E5%9C%B0%E5%9D%80%EF%BC%8C%E5%B0%86%E5%A5%BD%E8%AE%B0%E7%9A%84%E5%9F%9F%E5%90%8D%E8%BD%AC%E6%8D%A2%E6%88%90IP%E7%9A%84%E8%BF%87%E7%A8%8B%E8%A2%AB%E7%A7%B0%E4%B8%BA%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90%E3%80%82DNS%E5%B0%B1%E6%98%AF%E8%BF%9B%E8%A1%8C%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90%E7%9A%84%E7%B3%BB%E7%BB%9F%E3%80%82"><span class="nav-number">1.0.7.</span> <span class="nav-text">DNS （英文Domain Name System的缩写）是域名解析系统。在Internet上域名与IP地址之间是一一对应的，域名（例如传智播客的域名www.itcast.cn）虽然便于人们记忆，但计算机只认识IP地址，将好记的域名转换成IP的过程被称为域名解析。DNS就是进行域名解析的系统。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#HTTP-%E8%8B%B1%E6%96%87Hypertext-transfer-protocol%E7%9A%84%E7%BC%A9%E5%86%99-%E4%B8%AD%E6%96%87%E8%AF%91%E4%B8%BA%E8%B6%85%E6%96%87%E6%9C%AC%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%E3%80%82%E5%AE%83%E6%98%AF%E4%B8%80%E7%A7%8D%E8%AF%A6%E7%BB%86%E8%A7%84%E5%AE%9A%E4%BA%86%E6%B5%8F%E8%A7%88%E5%99%A8%E5%92%8C%E4%B8%87%E7%BB%B4%E7%BD%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B9%8B%E9%97%B4%E4%BA%92%E7%9B%B8%E9%80%9A%E4%BF%A1%E7%9A%84%E8%A7%84%E5%88%99%E3%80%82HTTP%E6%98%AF%E9%9D%9E%E5%B8%B8%E5%8F%AF%E9%9D%A0%E7%9A%84%E5%8D%8F%E8%AE%AE%EF%BC%8C%E5%AE%83%E5%85%B7%E6%9C%89%E5%BC%BA%E5%A4%A7%E7%9A%84%E8%87%AA%E6%A3%80%E8%83%BD%E5%8A%9B%EF%BC%8C%E6%89%80%E6%9C%89%E7%94%A8%E6%88%B7%E8%AF%B7%E6%B1%82%E7%9A%84%E6%96%87%E4%BB%B6%E5%88%B0%E8%BE%BE%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%97%B6%EF%BC%8C%E4%B8%80%E5%AE%9A%E6%98%AF%E5%87%86%E7%A1%AE%E6%97%A0%E8%AF%AF%E7%9A%84%E3%80%82"><span class="nav-number">1.0.8.</span> <span class="nav-text">HTTP (英文Hypertext transfer protocol的缩写) 中文译为超文本传输协议。它是一种详细规定了浏览器和万维网服务器之间互相通信的规则。HTTP是非常可靠的协议，它具有强大的自检能力，所有用户请求的文件到达客户端时，一定是准确无误的。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Web%E6%9C%AC%E6%84%8F%E6%98%AF%E8%9C%98%E8%9B%9B%E7%BD%91%E5%92%8C%E7%BD%91%E7%9A%84%E6%84%8F%E6%80%9D%E3%80%82%E5%AF%B9%E4%BA%8E%E6%99%AE%E9%80%9A%E7%94%A8%E6%88%B7%E6%9D%A5%E8%AF%B4%EF%BC%8CWeb%E4%BB%85%E4%BB%85%E5%8F%AA%E6%98%AF%E4%B8%80%E7%A7%8D%E7%8E%AF%E5%A2%83%E2%80%94%E2%80%94%E4%BA%92%E8%81%94%E7%BD%91%E7%9A%84%E4%BD%BF%E7%94%A8%E7%8E%AF%E5%A2%83%E3%80%81%E6%B0%9B%E5%9B%B4%E3%80%81%E5%86%85%E5%AE%B9%E7%AD%89%E3%80%82%E8%80%8C%E5%AF%B9%E4%BA%8E%E7%BD%91%E7%AB%99%E8%AE%BE%E8%AE%A1%E3%80%81%E5%88%B6%E4%BD%9C%E8%80%85%E6%9D%A5%E8%AF%B4%EF%BC%8C%E5%AE%83%E6%98%AF%E4%B8%80%E7%B3%BB%E5%88%97%E6%8A%80%E6%9C%AF%E7%9A%84%E5%A4%8D%E5%90%88%E6%80%BB%E7%A7%B0%EF%BC%88%E5%8C%85%E6%8B%AC%E7%BD%91%E7%AB%99%E7%9A%84%E5%89%8D%E5%8F%B0%E5%B8%83%E5%B1%80%E3%80%81%E5%90%8E%E5%8F%B0%E7%A8%8B%E5%BA%8F%E3%80%81%E7%BE%8E%E5%B7%A5%E3%80%81%E6%95%B0%E6%8D%AE%E5%BA%93%E5%BC%80%E5%8F%91%E7%AD%89%EF%BC%89%EF%BC%8C%E6%88%91%E4%BB%AC%E7%A7%B0%E5%AE%83%E4%B8%BA%E7%BD%91%E9%A1%B5%E3%80%82"><span class="nav-number">1.0.9.</span> <span class="nav-text">Web本意是蜘蛛网和网的意思。对于普通用户来说，Web仅仅只是一种环境——互联网的使用环境、氛围、内容等。而对于网站设计、制作者来说，它是一系列技术的复合总称（包括网站的前台布局、后台程序、美工、数据库开发等），我们称它为网页。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#W3C%EF%BC%88%E8%8B%B1%E6%96%87World-Wide-Web-Consortium%E7%9A%84%E7%BC%A9%E5%86%99%EF%BC%89%E4%B8%AD%E6%96%87%E8%AF%91%E4%B8%BA%E2%80%9C%E4%B8%87%E7%BB%B4%E7%BD%91%E8%81%94%E7%9B%9F%E2%80%9D%E3%80%82%E4%B8%87%E7%BB%B4%E7%BD%91%E8%81%94%E7%9B%9F%E6%98%AF%E5%9B%BD%E9%99%85%E6%9C%80%E8%91%97%E5%90%8D%E7%9A%84%E6%A0%87%E5%87%86%E5%8C%96%E7%BB%84%E7%BB%87%E3%80%82W3C%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%98%AF%E5%8F%91%E5%B1%95Web%E8%A7%84%E8%8C%83%EF%BC%8C%E8%87%AA1994%E5%B9%B4%E6%88%90%E7%AB%8B%E4%BB%A5%E6%9D%A5%EF%BC%8C%E5%B7%B2%E7%BB%8F%E5%8F%91%E5%B8%83%E4%BA%86200%E5%A4%9A%E9%A1%B9%E5%BD%B1%E5%93%8D%E6%B7%B1%E8%BF%9C%E7%9A%84Web%E6%8A%80%E6%9C%AF%E6%A0%87%E5%87%86%E5%8F%8A%E5%AE%9E%E6%96%BD%E6%8C%87%E5%8D%97%EF%BC%8C%E5%A6%82%E8%B6%85%E6%96%87%E6%9C%AC%E6%A0%87%E8%AE%B0%E8%AF%AD%E8%A8%80%EF%BC%88HTML%EF%BC%89%E3%80%81%E5%8F%AF%E6%89%A9%E5%B1%95%E6%A0%87%E8%AE%B0%E8%AF%AD%E8%A8%80%EF%BC%88XML%EF%BC%89%E7%AD%89%E3%80%82%E8%BF%99%E4%BA%9B%E8%A7%84%E8%8C%83%E6%9C%89%E6%95%88%E5%9C%B0%E4%BF%83%E8%BF%9B%E4%BA%86Web%E6%8A%80%E6%9C%AF%E7%9A%84%E5%85%BC%E5%AE%B9%EF%BC%8C%E5%AF%B9%E4%BA%92%E8%81%94%E7%BD%91%E7%9A%84%E5%8F%91%E5%B1%95%E5%92%8C%E5%BA%94%E7%94%A8%E8%B5%B7%E5%88%B0%E4%BA%86%E5%9F%BA%E7%A1%80%E6%80%A7%E5%92%8C%E6%A0%B9%E6%9C%AC%E6%80%A7%E7%9A%84%E6%94%AF%E6%92%91%E4%BD%9C%E7%94%A8%E3%80%82"><span class="nav-number">1.0.10.</span> <span class="nav-text">W3C（英文World Wide Web Consortium的缩写）中文译为“万维网联盟”。万维网联盟是国际最著名的标准化组织。W3C最重要的工作是发展Web规范，自1994年成立以来，已经发布了200多项影响深远的Web技术标准及实施指南，如超文本标记语言（HTML）、可扩展标记语言（XML）等。这些规范有效地促进了Web技术的兼容，对互联网的发展和应用起到了基础性和根本性的支撑作用。</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.1.</span> <span class="nav-text"></span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E4%BA%86%E8%A7%A3web%E6%A0%87%E5%87%86"><span class="nav-number">2.</span> <span class="nav-text">四、了解web标准</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%EF%BC%881%EF%BC%89%E5%B1%95%E7%A4%BAPPT%E5%AF%B9%E2%80%9CWeb%E6%A0%87%E5%87%86%E2%80%9D%E5%88%B6%E5%AE%9A%E7%9A%84%E5%8E%9F%E5%9B%A0%E5%8F%8A%E8%83%8C%E6%99%AF%E8%BF%9B%E8%A1%8C%E8%AE%B2%E8%A7%A3%E3%80%82"><span class="nav-number">2.0.1.</span> <span class="nav-text">（1）展示PPT对“Web标准”制定的原因及背景进行讲解。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%EF%BC%882%EF%BC%89Web%E6%A0%87%E5%87%86%E5%B9%B6%E4%B8%8D%E6%98%AF%E6%9F%90%E4%B8%80%E4%B8%AA%E6%A0%87%E5%87%86%EF%BC%8C%E8%80%8C%E6%98%AF%E4%B8%80%E7%B3%BB%E5%88%97%E6%A0%87%E5%87%86%E7%9A%84%E9%9B%86%E5%90%88%EF%BC%8C%E4%B8%BB%E8%A6%81%E5%8C%85%E6%8B%AC%E7%BB%93%E6%9E%84%EF%BC%88Structure%EF%BC%89%E3%80%81%E8%A1%A8%E7%8E%B0%EF%BC%88Presentation%EF%BC%89%E5%92%8C%E8%A1%8C%E4%B8%BA%EF%BC%88Behavior%EF%BC%89%E4%B8%89%E4%B8%AA%E6%96%B9%E9%9D%A2%E3%80%82%E5%88%86%E5%88%AB%E5%AF%B9Web%E6%A0%87%E5%87%86%E7%9A%84%E2%80%9C%E7%BB%93%E6%9E%84%E6%A0%87%E5%87%86%E2%80%9D%E3%80%81%E2%80%9C%E8%A1%A8%E7%8E%B0%E6%A0%87%E5%87%86%E2%80%9D%E5%8F%8A%E2%80%9C%E8%A1%8C%E4%B8%BA%E6%A0%87%E5%87%86%E2%80%9D%E8%BF%9B%E8%A1%8C%E8%AF%A6%E7%BB%86%E8%AE%B2%E8%A7%A3%EF%BC%8C%E5%B9%B6%E5%88%86%E5%88%AB%E4%B8%BE%E4%BE%8B%E8%AF%B4%E6%98%8E%E3%80%82"><span class="nav-number">2.0.2.</span> <span class="nav-text">（2）Web标准并不是某一个标准，而是一系列标准的集合，主要包括结构（Structure）、表现（Presentation）和行为（Behavior）三个方面。分别对Web标准的“结构标准”、“表现标准”及“行为标准”进行详细讲解，并分别举例说明。</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E6%A0%87%E5%87%86"><span class="nav-number">2.1.</span> <span class="nav-text">结构标准</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E7%94%A8%E4%BA%8E%E5%AF%B9%E7%BD%91%E9%A1%B5%E5%85%83%E7%B4%A0%E8%BF%9B%E8%A1%8C%E6%95%B4%E7%90%86%E5%92%8C%E5%88%86%E7%B1%BB%EF%BC%8C%E4%B8%BB%E8%A6%81%E5%8C%85%E6%8B%ACXML%E5%92%8CXHTML%E4%B8%A4%E4%B8%AA%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%B7%E4%BD%93%E5%8C%BA%E5%88%AB%E5%A6%82%E4%B8%8B%EF%BC%9A"><span class="nav-number">2.1.1.</span> <span class="nav-text">结构用于对网页元素进行整理和分类，主要包括XML和XHTML两个部分，具体区别如下：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#XML%EF%BC%88%E8%8B%B1%E6%96%87The-Extensible-Markup-Language-%E7%9A%84%E7%BC%A9%E5%86%99%EF%BC%89%E6%98%AF%E4%B8%80%E7%A7%8D%E5%8F%AF%E6%89%A9%E5%B1%95%E6%A0%87%E8%AE%B0%E8%AF%AD%E8%A8%80%E3%80%82XML%E6%9C%80%E5%88%9D%E7%9A%84%E7%9B%AE%E7%9A%84%E6%98%AF%E4%B8%BA%E4%BA%86%E5%BC%A5%E8%A1%A5HTML%E7%9A%84%E4%B8%8D%E8%B6%B3%EF%BC%8C%E5%AE%83%E5%85%B7%E6%9C%89%E5%BC%BA%E5%A4%A7%E7%9A%84%E6%89%A9%E5%B1%95%E6%80%A7%EF%BC%8C%E5%8F%AF%E7%94%A8%E4%BA%8E%E6%95%B0%E6%8D%AE%E7%9A%84%E8%BD%AC%E6%8D%A2%E5%92%8C%E6%8F%8F%E8%BF%B0%E3%80%82"><span class="nav-number">2.1.2.</span> <span class="nav-text">XML（英文The Extensible Markup Language 的缩写）是一种可扩展标记语言。XML最初的目的是为了弥补HTML的不足，它具有强大的扩展性，可用于数据的转换和描述。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#XHTML%EF%BC%88%E8%8B%B1%E6%96%87The-Extensible-HyperText-Markup-Language%E7%9A%84%E7%BC%A9%E5%86%99%EF%BC%89%E6%98%AF%E5%8F%AF%E6%89%A9%E5%B1%95%E8%B6%85%E6%96%87%E6%9C%AC%E6%A0%87%E8%AF%86%E8%AF%AD%E8%A8%80%E3%80%82XHTML%E6%98%AF%E5%9F%BA%E4%BA%8EXML%E7%9A%84%E6%A0%87%E8%AF%86%E8%AF%AD%E8%A8%80%EF%BC%8C%E6%98%AF%E5%9C%A8HTML4-0%E7%9A%84%E5%9F%BA%E7%A1%80%E4%B8%8A%EF%BC%8C%E7%94%A8XML%E7%9A%84%E8%A7%84%E5%88%99%E5%AF%B9%E5%85%B6%E8%BF%9B%E8%A1%8C%E6%89%A9%E5%B1%95%E5%BB%BA%E7%AB%8B%E8%B5%B7%E6%9D%A5%E7%9A%84%EF%BC%8C%E5%AE%83%E5%AE%9E%E7%8E%B0%E4%BA%86HTML%E5%90%91XML%E7%9A%84%E8%BF%87%E6%B8%A1%E3%80%82"><span class="nav-number">2.1.3.</span> <span class="nav-text">XHTML（英文The Extensible HyperText Markup Language的缩写）是可扩展超文本标识语言。XHTML是基于XML的标识语言，是在HTML4.0的基础上，用XML的规则对其进行扩展建立起来的，它实现了HTML向XML的过渡。</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%A8%E7%8E%B0%E6%A0%87%E5%87%86"><span class="nav-number">2.2.</span> <span class="nav-text">表现标准</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%A1%A8%E7%8E%B0%E7%94%A8%E4%BA%8E%E8%AE%BE%E7%BD%AE%E7%BD%91%E9%A1%B5%E5%85%83%E7%B4%A0%E7%9A%84%E7%89%88%E5%BC%8F%E3%80%81%E9%A2%9C%E8%89%B2%E3%80%81%E5%A4%A7%E5%B0%8F%E7%AD%89%E5%A4%96%E8%A7%82%E6%A0%B7%E5%BC%8F%EF%BC%8C%E4%B8%BB%E8%A6%81%E6%8C%87%E7%9A%84%E6%98%AFCSS%EF%BC%8C%E5%85%B7%E4%BD%93%E4%BB%8B%E7%BB%8D%E5%A6%82%E4%B8%8B%EF%BC%9A"><span class="nav-number">2.2.1.</span> <span class="nav-text">表现用于设置网页元素的版式、颜色、大小等外观样式，主要指的是CSS，具体介绍如下：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#CSS%EF%BC%88%E8%8B%B1%E6%96%87Cascading-Style-Sheet%E7%9A%84%E7%BC%A9%E5%86%99%EF%BC%89%E6%98%AF%E5%B1%82%E5%8F%A0%E6%A0%B7%E5%BC%8F%E8%A1%A8%E3%80%82CSS%E6%A0%87%E5%87%86%E5%BB%BA%E7%AB%8B%E7%9A%84%E7%9B%AE%E7%9A%84%E6%98%AF%E4%BB%A5CSS%E4%B8%BA%E5%9F%BA%E7%A1%80%E8%BF%9B%E8%A1%8C%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80%EF%BC%8C%E6%8E%A7%E5%88%B6%E7%BD%91%E9%A1%B5%E7%9A%84%E8%A1%A8%E7%8E%B0%E3%80%82CSS%E5%B8%83%E5%B1%80%E4%B8%8EXHTML%E7%BB%93%E6%9E%84%E8%AF%AD%E8%A8%80%E7%9B%B8%E7%BB%93%E5%90%88%EF%BC%8C%E5%8F%AF%E4%BB%A5%E5%AE%9E%E7%8E%B0%E8%A1%A8%E7%8E%B0%E4%B8%8E%E7%BB%93%E6%9E%84%E7%9A%84%E5%88%86%E7%A6%BB%EF%BC%8C%E4%BD%BF%E7%BD%91%E7%AB%99%E7%9A%84%E8%AE%BF%E9%97%AE%E5%8F%8A%E7%BB%B4%E6%8A%A4%E6%9B%B4%E5%8A%A0%E5%AE%B9%E6%98%93%E3%80%82"><span class="nav-number">2.2.2.</span> <span class="nav-text">CSS（英文Cascading Style Sheet的缩写）是层叠样式表。CSS标准建立的目的是以CSS为基础进行网页布局，控制网页的表现。CSS布局与XHTML结构语言相结合，可以实现表现与结构的分离，使网站的访问及维护更加容易。</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%8C%E4%B8%BA%E6%A0%87%E5%87%86"><span class="nav-number">2.3.</span> <span class="nav-text">行为标准</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%A1%8C%E4%B8%BA%E6%98%AF%E6%8C%87%E7%BD%91%E9%A1%B5%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%AE%9A%E4%B9%89%E5%8F%8A%E4%BA%A4%E4%BA%92%E7%9A%84%E7%BC%96%E5%86%99%EF%BC%8C%E4%B8%BB%E8%A6%81%E5%8C%85%E6%8B%ACDOM%E5%92%8CECMAScript%E4%B8%A4%E4%B8%AA%E9%83%A8%E5%88%86%E3%80%82%E5%85%B7%E4%BD%93%E5%8C%BA%E5%88%AB%E5%A6%82%E4%B8%8B%EF%BC%9A"><span class="nav-number">2.3.1.</span> <span class="nav-text">行为是指网页模型的定义及交互的编写，主要包括DOM和ECMAScript两个部分。具体区别如下：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#DOM%EF%BC%88%E8%8B%B1%E6%96%87Document-Object-Model%E7%9A%84%E7%BC%A9%E5%86%99%EF%BC%89%E6%98%AF%E6%96%87%E6%A1%A3%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B%E3%80%82W3C-%E6%96%87%E6%A1%A3%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B-%EF%BC%88DOM%EF%BC%89-%E6%98%AF%E4%B8%AD%E7%AB%8B%E4%BA%8E%E5%B9%B3%E5%8F%B0%E5%92%8C%E8%AF%AD%E8%A8%80%E7%9A%84%E6%8E%A5%E5%8F%A3%EF%BC%8C%E5%AE%83%E5%85%81%E8%AE%B8%E7%A8%8B%E5%BA%8F%E5%92%8C%E8%84%9A%E6%9C%AC%E5%8A%A8%E6%80%81%E5%9C%B0%E8%AE%BF%E9%97%AE%E5%92%8C%E6%9B%B4%E6%96%B0%E6%96%87%E6%A1%A3%E7%9A%84%E5%86%85%E5%AE%B9%E3%80%81%E7%BB%93%E6%9E%84%E5%92%8C%E6%A0%B7%E5%BC%8F%E3%80%82"><span class="nav-number">2.3.2.</span> <span class="nav-text">DOM（英文Document Object Model的缩写）是文档对象模型。W3C 文档对象模型 （DOM） 是中立于平台和语言的接口，它允许程序和脚本动态地访问和更新文档的内容、结构和样式。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ECMAScript%E6%98%AFECMA%EF%BC%88%E8%8B%B1%E6%96%87European-Computer-Manufacturers-Association%E7%9A%84%E7%BC%A9%E5%86%99%EF%BC%89%E5%9B%BD%E9%99%85%E4%BB%A5JavaScript%E4%B8%BA%E5%9F%BA%E7%A1%80%E5%88%B6%E5%AE%9A%E7%9A%84%E6%A0%87%E5%87%86%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80%E3%80%82JavaScript%E6%98%AF%E4%B8%80%E7%A7%8D%E5%9F%BA%E4%BA%8E%E5%AF%B9%E8%B1%A1%E5%92%8C%E4%BA%8B%E4%BB%B6%E9%A9%B1%E5%8A%A8%EF%BC%8C%E5%B9%B6%E5%85%B7%E6%9C%89%E7%9B%B8%E5%AF%B9%E5%AE%89%E5%85%A8%E6%80%A7%E7%9A%84%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80%EF%BC%8C%E5%B9%BF%E6%B3%9B%E7%94%A8%E4%BA%8EWeb%E5%BC%80%E5%8F%91%EF%BC%8C%E5%B8%B8%E7%94%A8%E6%9D%A5%E7%BB%99HTML%E7%BD%91%E9%A1%B5%E6%B7%BB%E5%8A%A0%E5%8A%A8%E6%80%81%E5%8A%9F%E8%83%BD%EF%BC%8C%E6%AF%94%E5%A6%82%E5%93%8D%E5%BA%94%E7%94%A8%E6%88%B7%E7%9A%84%E5%90%84%E7%A7%8D%E6%93%8D%E4%BD%9C%E3%80%82"><span class="nav-number">2.3.3.</span> <span class="nav-text">ECMAScript是ECMA（英文European Computer Manufacturers Association的缩写）国际以JavaScript为基础制定的标准脚本语言。JavaScript是一种基于对象和事件驱动，并具有相对安全性的客户端脚本语言，广泛用于Web开发，常用来给HTML网页添加动态功能，比如响应用户的各种操作。</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%94%E3%80%81HTML%E7%AE%80%E4%BB%8B"><span class="nav-number">2.4.</span> <span class="nav-text">五、HTML简介</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%EF%BC%881%EF%BC%89%E5%B1%95%E7%A4%BAPPT%E5%AF%B9%E2%80%9CHTML%E8%AF%AD%E8%A8%80%E2%80%9D%E7%9A%84%E6%A6%82%E5%BF%B5%E5%8F%8A%E4%BD%9C%E7%94%A8%E8%BF%9B%E8%A1%8C%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E3%80%82"><span class="nav-number">2.4.1.</span> <span class="nav-text">（1）展示PPT对“HTML语言”的概念及作用进行简单介绍。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#HTML%EF%BC%88%E8%8B%B1%E6%96%87Hyper-Text-Markup-Language%E7%9A%84%E7%BC%A9%E5%86%99%EF%BC%89%E4%B8%AD%E6%96%87%E8%AF%91%E4%B8%BA%E2%80%9C%E8%B6%85%E6%96%87%E6%9C%AC%E6%A0%87%E8%AE%B0%E8%AF%AD%E8%A8%80%E2%80%9D%EF%BC%8C%E4%B8%BB%E8%A6%81%E6%98%AF%E9%80%9A%E8%BF%87HTML%E6%A0%87%E8%AE%B0%E5%AF%B9%E7%BD%91%E9%A1%B5%E4%B8%AD%E7%9A%84%E6%96%87%E6%9C%AC%E3%80%81%E5%9B%BE%E7%89%87%E3%80%81%E5%A3%B0%E9%9F%B3%E7%AD%89%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%E6%8F%8F%E8%BF%B0%E3%80%82HTML%E6%8F%90%E4%BE%9B%E4%BA%86%E8%AE%B8%E5%A4%9A%E6%A0%87%E8%AE%B0%EF%BC%8C%E5%A6%82%E6%AE%B5%E8%90%BD%E6%A0%87%E8%AE%B0%E3%80%81%E6%A0%87%E9%A2%98%E6%A0%87%E8%AE%B0%E3%80%81%E8%B6%85%E9%93%BE%E6%8E%A5%E6%A0%87%E8%AE%B0%E3%80%81%E5%9B%BE%E7%89%87%E6%A0%87%E8%AE%B0%E7%AD%89%EF%BC%8C%E7%BD%91%E9%A1%B5%E4%B8%AD%E9%9C%80%E8%A6%81%E5%AE%9A%E4%B9%89%E4%BB%80%E4%B9%88%E5%86%85%E5%AE%B9%EF%BC%8C%E5%B0%B1%E7%94%A8%E7%9B%B8%E5%BA%94%E7%9A%84HTML%E6%A0%87%E8%AE%B0%E6%8F%8F%E8%BF%B0%E5%8D%B3%E5%8F%AF%E3%80%82"><span class="nav-number">2.4.2.</span> <span class="nav-text">HTML（英文Hyper Text Markup Language的缩写）中文译为“超文本标记语言”，主要是通过HTML标记对网页中的文本、图片、声音等内容进行描述。HTML提供了许多标记，如段落标记、标题标记、超链接标记、图片标记等，网页中需要定义什么内容，就用相应的HTML标记描述即可。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#HTML%E4%B9%8B%E6%89%80%E4%BB%A5%E7%A7%B0%E4%B8%BA%E8%B6%85%E6%96%87%E6%9C%AC%E6%A0%87%E8%AE%B0%E8%AF%AD%E8%A8%80%EF%BC%8C%E4%B8%8D%E4%BB%85%E6%98%AF%E5%9B%A0%E4%B8%BA%E5%AE%83%E9%80%9A%E8%BF%87%E6%A0%87%E8%AE%B0%E6%8F%8F%E8%BF%B0%E7%BD%91%E9%A1%B5%E5%86%85%E5%AE%B9%EF%BC%8C%E5%90%8C%E6%97%B6%E4%B9%9F%E7%94%B1%E4%BA%8E%E6%96%87%E6%9C%AC%E4%B8%AD%E5%8C%85%E5%90%AB%E4%BA%86%E6%89%80%E8%B0%93%E7%9A%84%E2%80%9C%E8%B6%85%E7%BA%A7%E9%93%BE%E6%8E%A5%E2%80%9D%E7%82%B9%E3%80%82%E9%80%9A%E8%BF%87%E8%B6%85%E9%93%BE%E6%8E%A5%E5%B0%86%E7%BD%91%E7%AB%99%E4%B8%8E%E7%BD%91%E9%A1%B5%E4%BB%A5%E5%8F%8A%E5%90%84%E7%A7%8D%E7%BD%91%E9%A1%B5%E5%85%83%E7%B4%A0%E9%93%BE%E6%8E%A5%E8%B5%B7%E6%9D%A5%EF%BC%8C%E6%9E%84%E6%88%90%E4%BA%86%E4%B8%B0%E5%AF%8C%E5%A4%9A%E5%BD%A9%E7%9A%84Web%E9%A1%B5%E9%9D%A2%E3%80%82"><span class="nav-number">2.4.3.</span> <span class="nav-text">HTML之所以称为超文本标记语言，不仅是因为它通过标记描述网页内容，同时也由于文本中包含了所谓的“超级链接”点。通过超链接将网站与网页以及各种网页元素链接起来，构成了丰富多彩的Web页面。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%EF%BC%882%EF%BC%89%E9%80%9A%E8%BF%87%E6%9F%A5%E7%9C%8B%E2%80%9C%E7%99%BE%E5%BA%A6%E2%80%9D%E7%BD%91%E9%A1%B5%E7%9A%84%E6%BA%90%E4%BB%A3%E7%A0%81%EF%BC%8C%E5%88%86%E6%9E%90HTML%E8%AF%AD%E8%A8%80%E4%B8%AD%E5%8C%85%E5%90%AB%E7%9A%84%E6%A0%87%E8%AE%B0%E3%80%82"><span class="nav-number">2.4.4.</span> <span class="nav-text">（2）通过查看“百度”网页的源代码，分析HTML语言中包含的标记。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%EF%BC%883%EF%BC%89%E5%B1%95%E7%A4%BAPPT%E5%AF%B9%E2%80%9CHTML%E8%AF%AD%E8%A8%80%E5%8F%91%E5%B1%95%E7%9A%84%E5%8E%86%E7%A8%8B%E2%80%9D%E8%BF%9B%E8%A1%8C%E8%AE%B2%E8%A7%A3%EF%BC%8C%E5%B9%B6%E6%8C%87%E5%87%BA%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E4%B8%ADHTML%E6%A0%87%E8%AE%B0%E7%9A%84%E5%8F%98%E5%8C%96%E3%80%82HTML%E8%AF%AD%E8%A8%80%E5%8F%91%E5%B1%95%E8%87%B3%E4%BB%8A%EF%BC%8C%E7%BB%8F%E5%8E%86%E4%BA%86%E5%85%AD%E4%B8%AA%E7%89%88%E6%9C%AC%EF%BC%8C%E8%BF%99%E4%B8%AA%E8%BF%87%E7%A8%8B%E4%B8%AD%E6%96%B0%E5%A2%9E%E4%BA%86%E8%AE%B8%E5%A4%9AHTML%E6%A0%87%E8%AE%B0%EF%BC%8C%E5%90%8C%E6%97%B6%E4%B9%9F%E6%B7%98%E6%B1%B0%E4%BA%86%E4%B8%80%E4%BA%9B%E6%A0%87%E8%AE%B0%EF%BC%8C%E5%85%B7%E4%BD%93%E5%8E%86%E7%A8%8B%E5%A6%82%E4%B8%8B%EF%BC%9A"><span class="nav-number">2.4.5.</span> <span class="nav-text">（3）展示PPT对“HTML语言发展的历程”进行讲解，并指出各个版本中HTML标记的变化。HTML语言发展至今，经历了六个版本，这个过程中新增了许多HTML标记，同时也淘汰了一些标记，具体历程如下：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%B6%85%E6%96%87%E6%9C%AC%E6%A0%87%E8%AE%B0%E8%AF%AD%E8%A8%80%EF%BC%88%E7%AC%AC%E4%B8%80%E7%89%88%EF%BC%89%E2%80%94%E2%80%94%E5%9C%A81993%E5%B9%B46%E6%9C%88%E4%BD%9C%E4%B8%BA%E4%BA%92%E8%81%94%E7%BD%91%E5%B7%A5%E7%A8%8B%E5%B7%A5%E4%BD%9C%E5%B0%8F%E7%BB%84%EF%BC%88IETF%EF%BC%89%E5%B7%A5%E4%BD%9C%E8%8D%89%E6%A1%88%E5%8F%91%E5%B8%83%E3%80%82"><span class="nav-number">2.4.6.</span> <span class="nav-text">超文本标记语言（第一版）——在1993年6月作为互联网工程工作小组（IETF）工作草案发布。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#HTML-2-0%E2%80%94%E2%80%941995%E5%B9%B411%E6%9C%88%E4%BD%9C%E4%B8%BARFC-1866%E5%8F%91%E5%B8%83%EF%BC%8C%E5%9C%A8RFC-2854%E4%BA%8E2000%E5%B9%B46%E6%9C%88%E5%8F%91%E5%B8%83%E4%B9%8B%E5%90%8E%E8%A2%AB%E5%AE%A3%E5%B8%83%E5%B7%B2%E7%BB%8F%E8%BF%87%E6%97%B6%E3%80%82"><span class="nav-number">2.4.7.</span> <span class="nav-text">HTML 2.0——1995年11月作为RFC 1866发布，在RFC 2854于2000年6月发布之后被宣布已经过时。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#HTML-3-2%E2%80%94%E2%80%941997%E5%B9%B41%E6%9C%8814%E6%97%A5%EF%BC%8CW3C%E6%8E%A8%E8%8D%90%E6%A0%87%E5%87%86%E3%80%82"><span class="nav-number">2.4.8.</span> <span class="nav-text">HTML 3.2——1997年1月14日，W3C推荐标准。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#HTML-4-0%E2%80%94%E2%80%941997%E5%B9%B412%E6%9C%8818%E6%97%A5%EF%BC%8CW3C%E6%8E%A8%E8%8D%90%E6%A0%87%E5%87%86%E3%80%82"><span class="nav-number">2.4.9.</span> <span class="nav-text">HTML 4.0——1997年12月18日，W3C推荐标准。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#HTML-4-01%EF%BC%88%E5%BE%AE%E5%B0%8F%E6%94%B9%E8%BF%9B%EF%BC%89%E2%80%94%E2%80%941999%E5%B9%B412%E6%9C%8824%E6%97%A5%EF%BC%8CW3C%E6%8E%A8%E8%8D%90%E6%A0%87%E5%87%86%E3%80%82"><span class="nav-number">2.4.10.</span> <span class="nav-text">HTML 4.01（微小改进）——1999年12月24日，W3C推荐标准。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#HTML-5%E7%9A%84%E7%AC%AC%E4%B8%80%E4%BB%BD%E6%AD%A3%E5%BC%8F%E8%8D%89%E6%A1%88%E4%BA%8E2008%E5%B9%B41%E6%9C%8822%E6%97%A5%E5%85%AC%E5%B8%83%EF%BC%8C2014%E5%B9%B410%E6%9C%88%E5%BA%95%E5%AE%9A%E7%A8%BF%E3%80%82"><span class="nav-number">2.4.11.</span> <span class="nav-text">HTML 5的第一份正式草案于2008年1月22日公布，2014年10月底定稿。</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%AD%E3%80%81CSS%E7%AE%80%E4%BB%8B"><span class="nav-number">2.5.</span> <span class="nav-text">六、CSS简介</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%EF%BC%881%EF%BC%89%E5%B1%95%E7%A4%BAPPT%E5%AF%B9%E2%80%9CCSS%E8%AF%AD%E8%A8%80%E2%80%9D%E7%9A%84%E6%A6%82%E5%BF%B5%E8%BF%9B%E8%A1%8C%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E3%80%82"><span class="nav-number">2.5.1.</span> <span class="nav-text">（1）展示PPT对“CSS语言”的概念进行简单介绍。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#CSS%E9%80%9A%E5%B8%B8%E7%A7%B0%E4%B8%BACSS%E6%A0%B7%E5%BC%8F%E6%88%96%E6%A0%B7%E5%BC%8F%E8%A1%A8%EF%BC%8C%E4%B8%BB%E8%A6%81%E7%94%A8%E4%BA%8E%E8%AE%BE%E7%BD%AEHTML%E9%A1%B5%E9%9D%A2%E4%B8%AD%E7%9A%84%E6%96%87%E6%9C%AC%E5%86%85%E5%AE%B9%EF%BC%88%E5%AD%97%E4%BD%93%E3%80%81%E5%A4%A7%E5%B0%8F%E3%80%81%E5%AF%B9%E9%BD%90%E6%96%B9%E5%BC%8F%E7%AD%89%EF%BC%89%E3%80%81%E5%9B%BE%E7%89%87%E7%9A%84%E5%A4%96%E5%BD%A2%EF%BC%88%E5%AE%BD%E9%AB%98%E3%80%81%E8%BE%B9%E6%A1%86%E6%A0%B7%E5%BC%8F%E3%80%81%E8%BE%B9%E8%B7%9D%E7%AD%89%EF%BC%89%E4%BB%A5%E5%8F%8A%E7%89%88%E9%9D%A2%E7%9A%84%E5%B8%83%E5%B1%80%E7%AD%89%E5%A4%96%E8%A7%82%E6%98%BE%E7%A4%BA%E6%A0%B7%E5%BC%8F%E3%80%82"><span class="nav-number">2.5.2.</span> <span class="nav-text">CSS通常称为CSS样式或样式表，主要用于设置HTML页面中的文本内容（字体、大小、对齐方式等）、图片的外形（宽高、边框样式、边距等）以及版面的布局等外观显示样式。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%EF%BC%882%EF%BC%89%E5%B1%95%E7%A4%BAPPT%EF%BC%8C%E5%AF%B9CSS%E8%AF%AD%E8%A8%80%E7%9A%84%E4%BD%9C%E7%94%A8%E5%8F%8A%E5%8F%91%E5%B1%95%E5%8E%86%E7%A8%8B%E8%BF%9B%E8%A1%8C%E8%AE%B2%E8%A7%A3%EF%BC%8C%E5%B9%B6%E5%AF%B9CSS%E6%8E%A7%E5%88%B6%E7%9A%84%E7%BD%91%E9%A1%B5%E6%95%88%E6%9E%9C%E8%BF%9B%E8%A1%8C%E5%B1%95%E7%A4%BA%E3%80%82"><span class="nav-number">2.5.3.</span> <span class="nav-text">（2）展示PPT，对CSS语言的作用及发展历程进行讲解，并对CSS控制的网页效果进行展示。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#-1"><span class="nav-number">2.5.4.</span> <span class="nav-text"></span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%83%E3%80%81JavaScript%E7%AE%80%E4%BB%8B"><span class="nav-number">2.6.</span> <span class="nav-text">七、JavaScript简介</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%EF%BC%881%EF%BC%89%E5%B1%95%E7%A4%BAPPT%E5%AF%B9%E2%80%9CJavaScript%E8%AF%AD%E8%A8%80%E2%80%9D%E7%9A%84%E6%A6%82%E5%BF%B5%E8%BF%9B%E8%A1%8C%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E3%80%82"><span class="nav-number">2.6.1.</span> <span class="nav-text">（1）展示PPT对“JavaScript语言”的概念进行简单介绍。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#JavaScript%E6%98%AFWeb%E9%A1%B5%E9%9D%A2%E4%B8%AD%E7%9A%84%E4%B8%80%E7%A7%8D%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80%EF%BC%8C%E9%80%9A%E8%BF%87JavaScript%E5%8F%AF%E4%BB%A5%E5%B0%86%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E8%BD%AC%E5%8F%98%E6%88%90%E6%94%AF%E6%8C%81%E7%94%A8%E6%88%B7%E4%BA%A4%E4%BA%92%E5%B9%B6%E5%93%8D%E5%BA%94%E7%9B%B8%E5%BA%94%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%8A%A8%E6%80%81%E9%A1%B5%E9%9D%A2%E3%80%82"><span class="nav-number">2.6.2.</span> <span class="nav-text">JavaScript是Web页面中的一种脚本语言，通过JavaScript可以将静态页面转变成支持用户交互并响应相应事件的动态页面。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%EF%BC%882%EF%BC%89%E5%B1%95%E7%A4%BAPPT%EF%BC%8C%E5%AF%B9JavaScript%E8%AF%AD%E8%A8%80%E7%9A%84%E4%BD%9C%E7%94%A8%E5%8F%8A%E5%8F%91%E5%B1%95%E5%8E%86%E7%A8%8B%E8%BF%9B%E8%A1%8C%E8%AE%B2%E8%A7%A3%EF%BC%8C%E5%B9%B6%E5%AF%B9JavaScript%E6%8E%A7%E5%88%B6%E7%9A%84%E7%BD%91%E9%A1%B5%E6%95%88%E6%9E%9C%E8%BF%9B%E8%A1%8C%E5%B1%95%E7%A4%BA%E3%80%82"><span class="nav-number">2.6.3.</span> <span class="nav-text">（2）展示PPT，对JavaScript语言的作用及发展历程进行讲解，并对JavaScript控制的网页效果进行展示。</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <span id="sitetime"></span>
+<script language=javascript>
+	function siteTime(){
+		window.setTimeout("siteTime()", 1000);
+		var seconds = 1000;
+		var minutes = seconds * 60;
+		var hours = minutes * 60;
+		var days = hours * 24;
+		var years = days * 365;
+		var today = new Date();
+		var todayYear = today.getFullYear();
+		var todayMonth = today.getMonth()+1;
+		var todayDate = today.getDate();
+		var todayHour = today.getHours();
+		var todayMinute = today.getMinutes();
+		var todaySecond = today.getSeconds();
+		/* 
+		Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+		year - 作为date对象的年份，为4位年份值
+		month - 0-11之间的整数，做为date对象的月份
+		day - 1-31之间的整数，做为date对象的天数
+		hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+		minutes - 0-59之间的整数，做为date对象的分钟数
+		seconds - 0-59之间的整数，做为date对象的秒数
+		microseconds - 0-999之间的整数，做为date对象的毫秒数
+        */
+		var t1 = Date.UTC(2020,02,13,15,00,00); //北京时间2018-2-13 00:00:00
+		var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+		var diff = t2-t1;
+		var diffYears = Math.floor(diff/years);
+		var diffDays = Math.floor((diff/days)-diffYears*365);
+		var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+		var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+		var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+		document.getElementById("sitetime").innerHTML=" 学习编程 "+/*diffYears+" 年 "+*/diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+		
+	}
+	siteTime();
+</script>
+<div class="Bbeian-info">
+	<a target="_blank" href="https://beian.miit.gov.cn/" style="color:#999;border-bottom:none;" rel="nofollow">赣ICP备2021009289号-1</a>
+
+</div><div class="Bbeian-info" style="display:flex;align-items: center; justify-content: center; border: none;">
+
+<img style="  margin:2px; max-width:16px; max-height:16px; border: none;"src="https://beian.mps.gov.cn/web/assets/logo01.6189a29f.png">
+	<a href="https://beian.mps.gov.cn/#/query/webSearch?code=36048202000074" style="color:#999;border-bottom:none; rel="noreferrer" target="_blank">赣公网安备36048202000074</a>
+</div>
+<div class="copyright">
+  <span class="author" itemprop="copyrightHolder">❤JavaSpansHHT</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+&copy; 2020 &mdash; <span itemprop="copyrightYear">2024</span>
+
+
+  
+</div>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="/js/src/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访问数 <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量 <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+  <div >
+<script type="text/javascript">
+var cnzz_s_tag = document.createElement('script');
+cnzz_s_tag.type = 'text/javascript';
+cnzz_s_tag.async = true;
+cnzz_s_tag.charset = 'utf-8';
+cnzz_s_tag.src = 'https://v1.cnzz.com/z_stat.php?id=1279918317&web_id=1279918317';
+var root_s = document.getElementsByTagName('script')[0];
+root_s.parentNode.insertBefore(cnzz_s_tag, root_s);</script>
+  </div>
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/AshinWang/SimpleValine@v0.1/SimpleValine.min.js"></script>
+
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '2EQW4wLvpASdRx4OUCWJHPLm-gzGzoHsz',
+        appKey: 'DVAudtdxaIobhdXo0bcr4j6Y',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>

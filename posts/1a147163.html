@@ -1,0 +1,1828 @@
+<!DOCTYPE html>
+<script src="/live2d-widget/autoload.js"></script>
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="html,笔记," />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="html基础">
+<meta property="og:url" content="https://benat.cn/posts/1a147163.html">
+<meta property="og:site_name" content="学习笔记">
+<meta property="og:locale">
+<meta property="og:image" content="https://benat.cn/posts/image/jingxuan_2.jpg">
+<meta property="og:image" content="https://benat.cn/posts/image/icon_7.jpg">
+<meta property="og:image" content="https://benat.cn/posts/image/jiangwai_1.jpg">
+<meta property="og:image" content="https://benat.cn/posts/image/footer_service.png">
+<meta property="article:published_time" content="2022-03-19T08:19:43.772Z">
+<meta property="article:modified_time" content="2022-03-19T08:22:51.968Z">
+<meta property="article:author" content="JavaSpansHHT">
+<meta property="article:tag" content="html">
+<meta property="article:tag" content="笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://benat.cn/posts/image/jingxuan_2.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://benat.cn/posts/1a147163.html"/>
+
+
+
+
+
+  <title>html基础 | 学习笔记</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">学习笔记</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">记录学习的点点滴滴</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-link"></i> <br />
+            
+            友链
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://benat.cn/posts/1a147163.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学习笔记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">html基础</h1>
+        
+
+        <div class="post-meta">
+		 <div class="post-meta">
+		<!-- 置顶插件添加 开始 -->
+		
+		<!-- 置顶插件添加 结束 -->
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-03-19T16:19:43+08:00">
+                2022-03-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/html/" itemprop="url" rel="index">
+                    <span itemprop="name">html</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/1a147163.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/posts/1a147163.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读 <i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3.9k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  17
+                </span>
+              
+            </div>
+          
+
+          
+              <div class="post-description">
+                   
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h1><pre><code>1. web概念概述
+2. HTML
+</code></pre>
+<h2 id="web概念概述"><a href="#web概念概述" class="headerlink" title="web概念概述"></a>web概念概述</h2><pre><code>* JavaWeb：
+    * 使用Java语言开发基于互联网的项目
+
+* 软件架构：
+    1. C/S: Client/Server 客户端/服务器端
+        * 在用户本地有一个客户端程序，在远程有一个服务器端程序
+        * 如：QQ，迅雷...
+        * 优点：
+            1. 用户体验好
+        * 缺点：
+            1. 开发、安装，部署，维护 麻烦
+    2. B/S: Browser/Server 浏览器/服务器端
+        * 只需要一个浏览器，用户通过不同的网址(URL)，客户访问不同的服务器端程序
+        * 优点：
+            1. 开发、安装，部署，维护 简单
+        * 缺点：
+            1. 如果应用过大，用户的体验可能会受到影响
+            2. 对硬件要求过高
+
+* B/S架构详解
+    * 资源分类：
+        1. 静态资源：
+            * 使用静态网页开发技术发布的资源。
+            * 特点：
+                * 所有用户访问，得到的结果是一样的。
+                * 如：文本，图片，音频、视频, HTML,CSS,JavaScript
+                * 如果用户请求的是静态资源，那么服务器会直接将静态资源发送给浏览器。浏览器中内置了静态资源的解析引擎，可以展示静态资源
+        2. 动态资源：
+            * 使用动态网页及时发布的资源。
+            * 特点：
+                * 所有用户访问，得到的结果可能不一样。
+                * 如：jsp/servlet,php,asp...
+                * 如果用户请求的是动态资源，那么服务器会执行动态资源，转换为静态资源，再发送给浏览器
+
+
+    * 我们要学习动态资源，必须先学习静态资源！
+
+    * 静态资源：
+        * HTML：用于搭建基础网页，展示页面的内容
+        * CSS：用于美化页面，布局页面
+        * JavaScript：控制页面的元素，让页面有一些动态的效果
+</code></pre>
+<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><pre><code>1. 概念：是最基础的网页开发语言
+    * Hyper Text Markup Language 超文本标记语言
+        * 超文本:
+            * 超文本是用超链接的方法，将各种不同空间的文字信息组织在一起的网状文本.
+        * 标记语言:
+            * 由标签构成的语言。&lt;标签名称&gt; 如 html，xml
+            * 标记语言不是编程语言
+
+2. 快速入门：
+    * 语法：
+        1. html文档后缀名 .html 或者 .htm
+        2. 标签分为
+            1. 围堵标签：有开始标签和结束标签。如 &lt;html&gt; &lt;/html&gt;
+            2. 自闭和标签：开始标签和结束标签在一起。如 &lt;br/&gt;
+
+        3. 标签可以嵌套：
+            需要正确嵌套，不能你中有我，我中有你
+            错误：&lt;a&gt;&lt;b&gt;&lt;/a&gt;&lt;/b&gt;
+            正确：&lt;a&gt;&lt;b&gt;&lt;/b&gt;&lt;/a&gt;
+
+        4. 在开始标签中可以定义属性。属性是由键值对构成，值需要用引号(单双都可)引起来
+        5. html的标签不区分大小写，但是建议使用小写。
+
+    * 代码：
+        &lt;html&gt;
+        
+            &lt;head&gt;
+                &lt;title&gt;title&lt;/title&gt;
+            &lt;/head&gt;
+            
+            &lt;body&gt;
+                &lt;FONT color=&#39;red&#39;&gt;Hello World&lt;/font&gt;&lt;br/&gt;
+                
+                &lt;font color=&#39;green&#39;&gt;Hello World&lt;/font&gt;
+            
+            &lt;/body&gt;
+    
+        &lt;/html&gt;
+
+3. 标签学习：
+    1. 文件标签：构成html最基本的标签
+        * html:html文档的根标签
+        * head：头标签。用于指定html文档的一些属性。引入外部的资源
+        * title：标题标签。
+        * body：体标签
+        * &lt;!DOCTYPE html&gt;：html5中定义该文档是html文档
+    2. 文本标签：和文本有关的标签
+        * 注释：&lt;!-- 注释内容 --&gt;
+        * &lt;h1&gt; to &lt;h6&gt;：标题标签
+            * h1~h6:字体大小逐渐递减
+        * &lt;p&gt;：段落标签
+        * &lt;br&gt;：换行标签
+        * &lt;hr&gt;：展示一条水平线
+            * 属性：
+                * color：颜色
+                * width：宽度
+                * size：高度
+                * align：对其方式
+                    * center：居中
+                    * left：左对齐
+                    * right：右对齐
+        * &lt;b&gt;：字体加粗
+        * &lt;i&gt;：字体斜体
+        * &lt;font&gt;:字体标签
+        * &lt;center&gt;:文本居中
+            * 属性：
+                * color：颜色
+                * size：大小
+                * face：字体
+
+        * 属性定义：
+            * color：
+                1. 英文单词：red,green,blue
+                2. rgb(值1，值2，值3)：值的范围：0~255  如  rgb(0,0,255)
+                3. #值1值2值3：值的范围：00~FF之间。如： #FF00FF
+            * width：
+                1. 数值：width=&#39;20&#39; ,数值的单位，默认是 px(像素)
+                2. 数值%：占比相对于父元素的比例
+
+        * 案例：公司简介
+            &lt;!DOCTYPE html&gt;
+            &lt;html lang=&quot;ch&quot;&gt;
+            &lt;head&gt;
+                &lt;meta charset=&quot;UTF-8&quot;&gt;
+                &lt;title&gt;黑马程序员简介&lt;/title&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+            
+            &lt;h1&gt;
+                公司简介
+            &lt;/h1&gt;
+            &lt;hr color=&quot;#ffd700&quot;&gt;
+            
+            &lt;p&gt;
+            &lt;font color=&quot;#FF0000&quot;&gt;&quot;中关村黑马程序员训练营&quot;&lt;/font&gt;是由&lt;b&gt;&lt;i&gt;传智播客&lt;/i&gt;&lt;/b&gt;联合中关村软件园、CSDN， 并委托传智播客进行教学实施的软件开发高端培训机构，致力于服务各大软件企业，解决当前软件开发技术飞速发展， 而企业招不到优秀人才的困扰。
+            &lt;/p&gt;
+            
+            &lt;p&gt;
+            目前，“中关村黑马程序员训练营”已成长为行业“学员质量好、课程内容深、企业满意”的移动开发高端训练基地， 并被评为中关村软件园重点扶持人才企业。
+            &lt;/p&gt;
+            
+            &lt;p&gt;
+            
+            黑马程序员的学员多为大学毕业后，有理想、有梦想，想从事IT行业，而没有环境和机遇改变自己命运的年轻人。 黑马程序员的学员筛选制度，远比现在90%以上的企业招聘流程更为严格。任何一名学员想成功入学“黑马程序员”， 必须经历长达2个月的面试流程，这些流程中不仅包括严格的技术测试、自学能力测试，还包括性格测试、压力测试、 品德测试等等测试。毫不夸张地说，黑马程序员训练营所有学员都是精挑细选出来的。百里挑一的残酷筛选制度确 保学员质量，并降低企业的用人风险。
+            中关村黑马程序员训练营不仅着重培养学员的基础理论知识，更注重培养项目实施管理能力，并密切关注技术革新， 不断引入先进的技术，研发更新技术课程，确保学员进入企业后不仅能独立从事开发工作，更能给企业带来新的技术体系和理念。
+            &lt;/p&gt;
+            
+            &lt;p&gt;
+            
+            一直以来，黑马程序员以技术视角关注IT产业发展，以深度分享推进产业技术成长，致力于弘扬技术创新，倡导分享、 开放和协作，努力打造高质量的IT人才服务平台。
+            &lt;/p&gt;
+            
+            &lt;hr color=&quot;#ffd700&quot;&gt;
+            
+            &lt;font color=&quot;gray&quot; size=&quot;2&quot;&gt;
+                &lt;center&gt;
+                    江苏传智播客教育科技股份有限公司&lt;br&gt;
+                    版权所有Copyright 2006-2018&amp;copy;, All Rights Reserved 苏ICP备16007882
+                &lt;/center&gt;
+            &lt;/font&gt;
+</code></pre>
+<p>​				<br>​				<br>​				</body><br>​				</html><br>​	<br>​		3. 图片标签：<br>​			* img：展示图片<br>​				* 属性：<br>​					* src：指定图片的位置<br>​	<br>​			* 代码：<br>​				 <!--展示一张图片 img--><br>​	<br>                <img src="image/jingxuan_2.jpg" align="right" alt="古镇" width="500" height="500"/></p>
+<pre><code>            &lt;!--
+                相对路径
+                    * 以.开头的路径
+                        * ./：代表当前目录  ./image/1.jpg
+                        * ../:代表上一级目录
+             --&gt;
+        
+            &lt;img src=&quot;./image/jiangwai_1.jpg&quot;&gt;
+        
+            &lt;img src=&quot;../image/jiangwai_1.jpg&quot;&gt;
+    4. 列表标签：
+        * 有序列表：
+            * ol:
+            * li:
+        * 无序列表：
+            * ul:
+            * li:
+    5. 链接标签：
+        * a:定义一个超链接
+            * 属性：
+                * href：指定访问资源的URL(统一资源定位符)
+                * target：指定打开资源的方式
+                    * _self:默认值，在当前页面打开
+                    * _blank：在空白页面打开
+
+        * 代码：
+             &lt;!--超链接  a--&gt;
+
+            &lt;a href=&quot;http://www.itcast.cn&quot;&gt;点我&lt;/a&gt;
+            &lt;br&gt;
+        
+            &lt;a href=&quot;http://www.itcast.cn&quot; target=&quot;_self&quot;&gt;点我&lt;/a&gt;
+            &lt;br&gt;
+            &lt;a href=&quot;http://www.itcast.cn&quot; target=&quot;_blank&quot;&gt;点我&lt;/a&gt;
+        
+            &lt;br&gt;
+        
+            &lt;a href=&quot;./5_列表标签.html&quot;&gt;列表标签&lt;/a&gt;&lt;br&gt;
+            &lt;a href=&quot;mailto:itcast@itcast.cn&quot;&gt;联系我们&lt;/a&gt;
+        
+            &lt;br&gt;
+            &lt;a href=&quot;http://www.itcast.cn&quot;&gt;&lt;img src=&quot;image/jiangwai_1.jpg&quot;&gt;&lt;/a&gt;
+    6. div和span：
+        * div:每一个div占满一整行。块级标签
+    	* span：文本信息在一行展示，行内标签 内联标签
+
+    7. 语义化标签：html5中为了提高程序的可读性，提供了一些标签。
+        1. &lt;header&gt;：页眉
+        2. &lt;footer&gt;：页脚
+
+
+    8. 表格标签：
+        * table：定义表格
+            * width：宽度
+            * border：边框
+            * cellpadding：定义内容和单元格的距离
+            * cellspacing：定义单元格之间的距离。如果指定为0，则单元格的线会合为一条、
+            * bgcolor：背景色
+            * align：对齐方式
+        * tr：定义行
+            * bgcolor：背景色
+            * align：对齐方式
+        * td：定义单元格
+            * colspan：合并列
+            * rowspan：合并行
+        * th：定义表头单元格
+        * &lt;caption&gt;：表格标题
+        * &lt;thead&gt;：表示表格的头部分
+        * &lt;tbody&gt;：表示表格的体部分
+        * &lt;tfoot&gt;：表示表格的脚部分
+</code></pre>
+<h2 id="案例：旅游网站首页"><a href="#案例：旅游网站首页" class="headerlink" title="案例：旅游网站首页"></a>案例：旅游网站首页</h2><pre><code>1. 确定使用table来完成布局	
+2. 如果某一行只有一个单元格，则使用&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+3. 如果某一行有多个单元格，则使用
+    &lt;tr&gt;
+        &lt;td&gt;
+            &lt;table&gt;&lt;/table&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+
+4. 代码实现
+
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;title&gt;黑马旅游网&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    
+        &lt;!--采用table来完成布局--&gt;
+        &lt;!--最外层的table，用于整个页面的布局--&gt;
+        &lt;table width=&quot;100%&quot; align=&quot;center&quot;&gt;
+           &lt;!-- 第1行 --&gt;
+            &lt;tr&gt;
+                &lt;td&gt;
+                    &lt;img src=&quot;image/top_banner.jpg&quot; width=&quot;100%&quot; alt=&quot;&quot;&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+    
+            &lt;!-- 第2行 --&gt;
+            &lt;tr&gt;
+                &lt;td&gt;
+                    &lt;table width=&quot;100%&quot; align=&quot;center&quot;&gt;
+                        &lt;tr&gt;
+                            &lt;td&gt;
+                                &lt;img src=&quot;image/logo.jpg&quot; alt=&quot;&quot;&gt;
+                            &lt;/td&gt;
+                            &lt;td&gt;
+                                &lt;img src=&quot;image/search.png&quot; alt=&quot;&quot;&gt;
+                            &lt;/td&gt;
+                            &lt;td&gt;
+                                &lt;img src=&quot;image/hotel_tel.png&quot; alt=&quot;&quot;&gt;
+                            &lt;/td&gt;
+                        &lt;/tr&gt;
+                    &lt;/table&gt;
+    
+                &lt;/td&gt;
+            &lt;/tr&gt;
+    
+            &lt;!-- 第3行 --&gt;
+            &lt;tr&gt;
+                &lt;td&gt;
+                    &lt;table width=&quot;100%&quot; align=&quot;center&quot;&gt;
+                        &lt;tr bgcolor=&quot;#ffd700&quot; align=&quot;center&quot; height=&quot;45&quot; &gt;
+                            &lt;td&gt;
+                                &lt;a href=&quot;&quot;&gt;首页&lt;/a&gt;
+                            &lt;/td&gt;
+    
+                            &lt;td&gt;
+                                门票
+                            &lt;/td&gt;
+    
+                            &lt;td&gt;
+                                门票
+                            &lt;/td&gt;
+    
+                            &lt;td&gt;
+                                门票
+                            &lt;/td&gt;
+    
+                            &lt;td&gt;
+                                门票
+                            &lt;/td&gt;
+    
+                            &lt;td&gt;
+                                门票
+                            &lt;/td&gt;
+    
+                            &lt;td&gt;
+                                门票
+                            &lt;/td&gt;
+    
+                            &lt;td&gt;
+                                门票
+                            &lt;/td&gt;
+    
+                            &lt;td&gt;
+                                门票
+                            &lt;/td&gt;
+    
+                            &lt;td&gt;
+                                门票
+                            &lt;/td&gt;
+                        &lt;/tr&gt;
+                    &lt;/table&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+    
+            &lt;!-- 第4行 轮播图 --&gt;
+            &lt;tr&gt;
+                &lt;td&gt;
+                    &lt;img src=&quot;image/banner_3.jpg&quot; alt=&quot;&quot; width=&quot;100%&quot;&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+    
+            &lt;!-- 第5行 黑马精选--&gt;
+            &lt;tr&gt;
+                &lt;td&gt;
+                    &lt;img src=&quot;image/icon_5.jpg&quot; alt=&quot;&quot;&gt;
+                    黑马精选
+                    &lt;hr  color=&quot;#ffd700&quot; &gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+    
+            &lt;!-- 第6行 --&gt;
+            &lt;tr&gt;
+                &lt;td&gt;
+                    &lt;table align=&quot;center&quot; width=&quot;95%&quot;&gt;
+                        &lt;tr&gt;
+                            &lt;td&gt;
+    
+                                &lt;img src=&quot;image/jiangxuan_1.jpg&quot; alt=&quot;&quot;&gt;
+                                &lt;p&gt;上海飞三亚五天4晚自由行(春节销售+亲子+蜜月+自由行)&lt;/p&gt;
+                                &lt;font color=&quot;red&quot;&gt;&amp;yen; 899&lt;/font&gt;
+                            &lt;/td&gt;
+    
+                            &lt;td&gt;
+    
+                                &lt;img src=&quot;image/jiangxuan_1.jpg&quot; alt=&quot;&quot;&gt;
+                                &lt;p&gt;上海飞三亚五天4晚自由行(春节销售+亲子+蜜月+自由行)&lt;/p&gt;
+                                &lt;font color=&quot;red&quot;&gt;&amp;yen; 899&lt;/font&gt;
+                            &lt;/td&gt;
+    
+                            &lt;td&gt;
+    
+                                &lt;img src=&quot;image/jiangxuan_1.jpg&quot; alt=&quot;&quot;&gt;
+                                &lt;p&gt;上海飞三亚五天4晚自由行(春节销售+亲子+蜜月+自由行)&lt;/p&gt;
+                                &lt;font color=&quot;red&quot;&gt;&amp;yen; 899&lt;/font&gt;
+                            &lt;/td&gt;
+    
+                            &lt;td&gt;
+    
+                                &lt;img src=&quot;image/jiangxuan_1.jpg&quot; alt=&quot;&quot;&gt;
+                                &lt;p&gt;上海飞三亚五天4晚自由行(春节销售+亲子+蜜月+自由行)&lt;/p&gt;
+                                &lt;font color=&quot;red&quot;&gt;&amp;yen; 899&lt;/font&gt;
+                            &lt;/td&gt;
+                        &lt;/tr&gt;
+                    &lt;/table&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+    
+            &lt;!-- 第7行 国内游 --&gt;
+            &lt;tr&gt;
+                &lt;td&gt;
+                    &lt;img src=&quot;image/icon_6.jpg&quot; alt=&quot;&quot;&gt;
+                    国内游
+                    &lt;hr  color=&quot;#ffd700&quot; &gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+    
+            &lt;!-- 第8行 --&gt;
+            &lt;tr&gt;
+                &lt;td&gt;
+                    &lt;table align=&quot;center&quot; width=&quot;95%&quot;&gt;
+                        &lt;tr&gt;
+                            &lt;td rowspan=&quot;2&quot;&gt;
+                                &lt;img src=&quot;image/guonei_1.jpg&quot; alt=&quot;&quot;&gt;
+                            &lt;/td&gt;
+    
+                            &lt;td&gt;
+    
+                                &lt;img src=&quot;image/jiangxuan_2.jpg&quot; alt=&quot;&quot; height=&quot;100%&quot;&gt;
+                                &lt;p&gt;上海飞三亚五天4晚自由行(春节销售+亲子+蜜月+自由行)&lt;/p&gt;
+                                &lt;font color=&quot;red&quot;&gt;&amp;yen; 699&lt;/font&gt;
+                            &lt;/td&gt;
+    
+                            &lt;td&gt;
+    
+                                &lt;img src=&quot;image/jiangxuan_2.jpg&quot; alt=&quot;&quot;&gt;
+                                &lt;p&gt;上海飞三亚五天4晚自由行(春节销售+亲子+蜜月+自由行)&lt;/p&gt;
+                                &lt;font color=&quot;red&quot;&gt;&amp;yen; 699&lt;/font&gt;
+                            &lt;/td&gt;
+    
+                            &lt;td&gt;
+    
+                                &lt;img src=&quot;image/jiangxuan_2.jpg&quot; alt=&quot;&quot;&gt;
+                                &lt;p&gt;上海飞三亚五天4晚自由行(春节销售+亲子+蜜月+自由行)&lt;/p&gt;
+                                &lt;font color=&quot;red&quot;&gt;&amp;yen; 699&lt;/font&gt;
+                            &lt;/td&gt;
+                        &lt;/tr&gt;
+    
+                        &lt;tr&gt;
+                            &lt;td&gt;
+    
+                                &lt;img src=&quot;image/jiangxuan_2.jpg&quot; alt=&quot;&quot;&gt;
+                                &lt;p&gt;上海飞三亚五天4晚自由行(春节销售+亲子+蜜月+自由行)&lt;/p&gt;
+                                &lt;font color=&quot;red&quot;&gt;&amp;yen; 699&lt;/font&gt;
+                            &lt;/td&gt;
+    
+                            &lt;td&gt;
+    
+                                &lt;img src=&quot;image/jiangxuan_2.jpg&quot; alt=&quot;&quot;&gt;
+                                &lt;p&gt;上海飞三亚五天4晚自由行(春节销售+亲子+蜜月+自由行)&lt;/p&gt;
+                                &lt;font color=&quot;red&quot;&gt;&amp;yen; 699&lt;/font&gt;
+                            &lt;/td&gt;
+    
+                            &lt;td&gt;
+    
+                                &lt;img src=&quot;image/jiangxuan_2.jpg&quot; alt=&quot;&quot;&gt;
+                                &lt;p&gt;上海飞三亚五天4晚自由行(春节销售+亲子+蜜月+自由行)&lt;/p&gt;
+                                &lt;font color=&quot;red&quot;&gt;&amp;yen; 699&lt;/font&gt;
+                            &lt;/td&gt;
+</code></pre>
+<p>​		<br>​		                    </tr><br>​		                </table><br>​		            </td><br>​		        </tr><br>​		<br>​		        <!-- 第9行 境外游 --><br>​		        <tr><br>​		            <td><br>​		                <img src="image/icon_7.jpg" alt=""><br>​		                境外游<br>​		                <hr  color="#ffd700" ><br>​		            </td><br>​		        </tr><br>​		<br>​		        <!-- 第10行 --><br>​		        <tr><br>​		            <td><br>​		                <table align="center" width="95%"><br>​		                    <tr><br>​		                        <td rowspan="2"><br>​		                            <img src="image/jiangwai_1.jpg" alt=""><br>​		                        </td><br>​		<br>                                <td></p>
+<pre><code>                                &lt;img src=&quot;image/jiangxuan_3.jpg&quot; alt=&quot;&quot; height=&quot;100%&quot;&gt;
+                                &lt;p&gt;上海飞三亚五天4晚自由行(春节销售+亲子+蜜月+自由行)&lt;/p&gt;
+                                &lt;font color=&quot;red&quot;&gt;&amp;yen; 699&lt;/font&gt;
+                            &lt;/td&gt;
+    
+                            &lt;td&gt;
+    
+                               &lt;img src=&quot;image/jiangxuan_3.jpg&quot; alt=&quot;&quot;&gt;
+                                &lt;p&gt;上海飞三亚五天4晚自由行(春节销售+亲子+蜜月+自由行)&lt;/p&gt;
+                                &lt;font color=&quot;red&quot;&gt;&amp;yen; 699&lt;/font&gt;
+                            &lt;/td&gt;
+    
+                            &lt;td&gt;
+    
+                               &lt;img src=&quot;image/jiangxuan_3.jpg&quot; alt=&quot;&quot;&gt;
+                                &lt;p&gt;上海飞三亚五天4晚自由行(春节销售+亲子+蜜月+自由行)&lt;/p&gt;
+                                &lt;font color=&quot;red&quot;&gt;&amp;yen; 699&lt;/font&gt;
+                            &lt;/td&gt;
+                        &lt;/tr&gt;
+    
+                        &lt;tr&gt;
+                            &lt;td&gt;
+    
+                               &lt;img src=&quot;image/jiangxuan_3.jpg&quot; alt=&quot;&quot;&gt;
+                                &lt;p&gt;上海飞三亚五天4晚自由行(春节销售+亲子+蜜月+自由行)&lt;/p&gt;
+                                &lt;font color=&quot;red&quot;&gt;&amp;yen; 699&lt;/font&gt;
+                            &lt;/td&gt;
+    
+                            &lt;td&gt;
+    
+                               &lt;img src=&quot;image/jiangxuan_3.jpg&quot; alt=&quot;&quot;&gt;
+                                &lt;p&gt;上海飞三亚五天4晚自由行(春节销售+亲子+蜜月+自由行)&lt;/p&gt;
+                                &lt;font color=&quot;red&quot;&gt;&amp;yen; 699&lt;/font&gt;
+                            &lt;/td&gt;
+    
+                            &lt;td&gt;
+    
+                               &lt;img src=&quot;image/jiangxuan_3.jpg&quot; alt=&quot;&quot;&gt;
+                                &lt;p&gt;上海飞三亚五天4晚自由行(春节销售+亲子+蜜月+自由行)&lt;/p&gt;
+                                &lt;font color=&quot;red&quot;&gt;&amp;yen; 699&lt;/font&gt;
+                            &lt;/td&gt;
+</code></pre>
+<p>​		<br>​		                    </tr><br>​		                </table><br>​		            </td><br>​		        </tr><br>​		        <!-- 第11行 --><br>​		        <tr><br>​		            <td><br>​		                <img src="image/footer_service.png" alt="" width="100%"><br>​		            </td><br>​		        </tr><br>​		<br>​		        <!-- 第12行 --><br>​		        <tr><br>​		            <td align="center" bgcolor="#ffd700" height="40"><br>​		                <font color="gray" size="2"><br>​		                江苏传智播客教育科技股份有限公司<br>​		                版权所有Copyright 2006-2018&copy;, All Rights Reserved 苏ICP备16007882<br>​		                </font><br>​		            </td><br>​		        </tr><br>​		<br>​		    </table></p>
+<p>​		<br>​		</body><br>​		</html></p>
+
+      
+    </div>
+    
+    
+    
+	  <div>
+    
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="../js/src/jquery-1.7.1.min.js"></script>
+  <script src="../js/src/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../css/sweetalert.mini.css">
+
+
+  </p>
+  <p style="text-align:center;color:#bfbfbf;"> <i class="fa fa-creative-commons"></i><span style="text-align:center;color:#bfbfbf;"> 版权声明：</span> 本网站所有文章除特别声明外，著作权归作者所有。转载请注明出处！</p>  
+</div>
+
+    
+	  </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="../images/wechat.png" alt=" 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+		<div> <div>
+ <div style="text-align:center;color:#bfbfbf;font-size:16px;">
+	<span>-------- 本文结束 </span> 
+		<i class="fa fa-paw"></i> 
+			<span> 感谢阅读 --------</span> 
+			</div> 
+			
+			</div> </div>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/html/" rel="tag"><i class="fa fa-tag"></i> html</a>
+          
+            <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"><i class="fa fa-tag"></i> 笔记</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/6331d382.html" rel="next" title="数据库连接池">
+                <i class="fa fa-chevron-left"></i> 数据库连接池
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/1a147173.html" rel="prev" title="html基础">
+                html基础 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="" />
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">82</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%8A%E6%97%A5%E5%86%85%E5%AE%B9"><span class="nav-number">1.</span> <span class="nav-text">今日内容</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#web%E6%A6%82%E5%BF%B5%E6%A6%82%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">web概念概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML"><span class="nav-number">1.2.</span> <span class="nav-text">HTML</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A1%88%E4%BE%8B%EF%BC%9A%E6%97%85%E6%B8%B8%E7%BD%91%E7%AB%99%E9%A6%96%E9%A1%B5"><span class="nav-number">1.3.</span> <span class="nav-text">案例：旅游网站首页</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <span id="sitetime"></span>
+<script language=javascript>
+	function siteTime(){
+		window.setTimeout("siteTime()", 1000);
+		var seconds = 1000;
+		var minutes = seconds * 60;
+		var hours = minutes * 60;
+		var days = hours * 24;
+		var years = days * 365;
+		var today = new Date();
+		var todayYear = today.getFullYear();
+		var todayMonth = today.getMonth()+1;
+		var todayDate = today.getDate();
+		var todayHour = today.getHours();
+		var todayMinute = today.getMinutes();
+		var todaySecond = today.getSeconds();
+		/* 
+		Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+		year - 作为date对象的年份，为4位年份值
+		month - 0-11之间的整数，做为date对象的月份
+		day - 1-31之间的整数，做为date对象的天数
+		hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+		minutes - 0-59之间的整数，做为date对象的分钟数
+		seconds - 0-59之间的整数，做为date对象的秒数
+		microseconds - 0-999之间的整数，做为date对象的毫秒数
+        */
+		var t1 = Date.UTC(2020,02,13,15,00,00); //北京时间2018-2-13 00:00:00
+		var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+		var diff = t2-t1;
+		var diffYears = Math.floor(diff/years);
+		var diffDays = Math.floor((diff/days)-diffYears*365);
+		var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+		var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+		var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+		document.getElementById("sitetime").innerHTML=" 学习编程 "+/*diffYears+" 年 "+*/diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+		
+	}
+	siteTime();
+</script>
+<div class="Bbeian-info">
+	<a target="_blank" href="https://beian.miit.gov.cn/" style="color:#999;border-bottom:none;" rel="nofollow">赣ICP备2021009289号-1</a>
+
+</div><div class="Bbeian-info" style="display:flex;align-items: center; justify-content: center; border: none;">
+
+<img style="  margin:2px; max-width:16px; max-height:16px; border: none;"src="https://beian.mps.gov.cn/web/assets/logo01.6189a29f.png">
+	<a href="https://beian.mps.gov.cn/#/query/webSearch?code=36048202000074" style="color:#999;border-bottom:none; rel="noreferrer" target="_blank">赣公网安备36048202000074</a>
+</div>
+<div class="copyright">
+  <span class="author" itemprop="copyrightHolder">❤JavaSpansHHT</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+&copy; 2020 &mdash; <span itemprop="copyrightYear">2024</span>
+
+
+  
+</div>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="/js/src/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访问数 <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量 <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+  <div >
+<script type="text/javascript">
+var cnzz_s_tag = document.createElement('script');
+cnzz_s_tag.type = 'text/javascript';
+cnzz_s_tag.async = true;
+cnzz_s_tag.charset = 'utf-8';
+cnzz_s_tag.src = 'https://v1.cnzz.com/z_stat.php?id=1279918317&web_id=1279918317';
+var root_s = document.getElementsByTagName('script')[0];
+root_s.parentNode.insertBefore(cnzz_s_tag, root_s);</script>
+  </div>
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/AshinWang/SimpleValine@v0.1/SimpleValine.min.js"></script>
+
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '2EQW4wLvpASdRx4OUCWJHPLm-gzGzoHsz',
+        appKey: 'DVAudtdxaIobhdXo0bcr4j6Y',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>

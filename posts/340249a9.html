@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<script src="/live2d-widget/autoload.js"></script>
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="笔记,Java," />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="数组">
+<meta property="og:url" content="https://benat.cn/posts/340249a9.html">
+<meta property="og:site_name" content="学习笔记">
+<meta property="og:locale">
+<meta property="article:published_time" content="2021-05-17T10:43:03.288Z">
+<meta property="article:modified_time" content="2021-06-15T09:54:14.679Z">
+<meta property="article:author" content="JavaSpansHHT">
+<meta property="article:tag" content="笔记">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://benat.cn/posts/340249a9.html"/>
+
+
+
+
+
+  <title>数组 | 学习笔记</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">学习笔记</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">记录学习的点点滴滴</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-link"></i> <br />
+            
+            友链
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://benat.cn/posts/340249a9.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学习笔记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">数组</h1>
+        
+
+        <div class="post-meta">
+		 <div class="post-meta">
+		<!-- 置顶插件添加 开始 -->
+		
+		<!-- 置顶插件添加 结束 -->
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-05-17T18:43:03+08:00">
+                2021-05-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/340249a9.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/posts/340249a9.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读 <i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  8
+                </span>
+              
+            </div>
+          
+
+          
+              <div class="post-description">
+                   
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="数组的定义"><a href="#数组的定义" class="headerlink" title="数组的定义"></a>数组的定义</h3><ul>
+<li><h5 id="数组是相同类型数据的有序集合"><a href="#数组是相同类型数据的有序集合" class="headerlink" title="数组是相同类型数据的有序集合"></a>数组是相同类型数据的有序集合</h5></li>
+<li><h5 id="数组描述的是相同类型的若干个数据，按照一定的先后顺序排列组合而成。"><a href="#数组描述的是相同类型的若干个数据，按照一定的先后顺序排列组合而成。" class="headerlink" title="数组描述的是相同类型的若干个数据，按照一定的先后顺序排列组合而成。"></a>数组描述的是相同类型的若干个数据，按照一定的先后顺序排列组合而成。</h5></li>
+<li><h5 id="其中，每一个数据称作一个数组元素，每个数组元素可以通过一个下标来访问他们。"><a href="#其中，每一个数据称作一个数组元素，每个数组元素可以通过一个下标来访问他们。" class="headerlink" title="其中，每一个数据称作一个数组元素，每个数组元素可以通过一个下标来访问他们。"></a>其中，每一个数据称作一个数组元素，每个数组元素可以通过一个下标来访问他们。</h5></li>
+</ul>
+<h3 id="数组声明创建"><a href="#数组声明创建" class="headerlink" title="数组声明创建"></a>数组声明创建</h3><ul>
+<li><h4 id="首先必须声明数组变量，才能在程序中使用数组。"><a href="#首先必须声明数组变量，才能在程序中使用数组。" class="headerlink" title="首先必须声明数组变量，才能在程序中使用数组。"></a>首先必须声明数组变量，才能在程序中使用数组。</h4></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dataType[] arrayRefVar; <span class="comment">//首选方法</span></span><br><span class="line">或</span><br><span class="line">dataType arrayRefVar[];<span class="comment">//效果相同但不是首选方法</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h4 id="Java语言使用new操作符来创建数组，语法如下："><a href="#Java语言使用new操作符来创建数组，语法如下：" class="headerlink" title="Java语言使用new操作符来创建数组，语法如下："></a>Java语言使用new操作符来创建数组，语法如下：</h4></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dataType[]arrayRefVer = <span class="keyword">new</span> <span class="title class_">dataType</span>[arraySize];</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h4 id="数组的元素是通过索引访问的，数组索引-下标值-从0开始。"><a href="#数组的元素是通过索引访问的，数组索引-下标值-从0开始。" class="headerlink" title="数组的元素是通过索引访问的，数组索引(下标值)从0开始。"></a>数组的元素是通过索引访问的，数组索引(下标值)从0开始。</h4></li>
+<li><h4 id="获取数组的v长度-arrays-length"><a href="#获取数组的v长度-arrays-length" class="headerlink" title="获取数组的v长度 arrays.length"></a>获取数组的v长度 arrays.length</h4></li>
+<li><h4 id="如果没有给数组某个元素赋值的话-默认值-为-类型的默认值"><a href="#如果没有给数组某个元素赋值的话-默认值-为-类型的默认值" class="headerlink" title="如果没有给数组某个元素赋值的话 默认值 为 类型的默认值"></a>如果没有给数组某个元素赋值的话 默认值 为 类型的默认值</h4></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>int</th>
+<th>double</th>
+<th>String</th>
+<th>boolean</th>
+<th>char</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>0.0</td>
+<td>null</td>
+<td>false</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ArratRes</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">int</span> [] array ;<span class="comment">//定义一个数组</span></span><br><span class="line">        array = <span class="keyword">new</span> <span class="title class_">int</span> [<span class="number">10</span>];<span class="comment">//创建了一个数组，这里面可以存放10个int类型的数字</span></span><br><span class="line">    <span class="comment">//给数组元素赋值</span></span><br><span class="line">        array[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">        array[<span class="number">1</span>]=<span class="number">2</span>;</span><br><span class="line">        array[<span class="number">2</span>]=<span class="number">3</span>;</span><br><span class="line">        array[<span class="number">3</span>]=<span class="number">4</span>;</span><br><span class="line">        array[<span class="number">4</span>]=<span class="number">5</span>;</span><br><span class="line">        array[<span class="number">5</span>]=<span class="number">6</span>;</span><br><span class="line">        array[<span class="number">6</span>]=<span class="number">7</span>;</span><br><span class="line">        array[<span class="number">7</span>]=<span class="number">8</span>;</span><br><span class="line">        array[<span class="number">8</span>]=<span class="number">9</span>;</span><br><span class="line">        array[<span class="number">9</span>]=<span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="三种初始化"><a href="#三种初始化" class="headerlink" title="三种初始化"></a>三种初始化</h3><h4 id="静态初始化"><a href="#静态初始化" class="headerlink" title="静态初始化"></a>静态初始化</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> [] a =&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;</span><br><span class="line">man [] mans = &#123;<span class="keyword">new</span> <span class="title class_">Man</span>(<span class="number">1</span>,<span class="number">1</span>,<span class="keyword">new</span> <span class="title class_">Man</span>(<span class="number">2</span>,<span class="number">2</span>))&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="动态初始化"><a href="#动态初始化" class="headerlink" title="动态初始化"></a>动态初始化</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> [] a = <span class="keyword">new</span> <span class="title class_">int</span> [<span class="number">2</span>];</span><br><span class="line">a[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">a[<span class="number">1</span>]=<span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="数组的默认初始化"><a href="#数组的默认初始化" class="headerlink" title="数组的默认初始化"></a>数组的默认初始化</h4><h5 id="数组是引用类型，他的元素相当于类的实例变量，因此数组一经分配空间，其中每个元素也被按照实例变量同样的方式被隐式初始化。"><a href="#数组是引用类型，他的元素相当于类的实例变量，因此数组一经分配空间，其中每个元素也被按照实例变量同样的方式被隐式初始化。" class="headerlink" title="数组是引用类型，他的元素相当于类的实例变量，因此数组一经分配空间，其中每个元素也被按照实例变量同样的方式被隐式初始化。"></a>数组是引用类型，他的元素相当于类的实例变量，因此数组一经分配空间，其中每个元素也被按照实例变量同样的方式被隐式初始化。</h5><ul>
+<li><h3 id="数组的四个基本特点"><a href="#数组的四个基本特点" class="headerlink" title="数组的四个基本特点"></a>数组的四个基本特点</h3></li>
+<li><h5 id="其长度是确定的。数组一旦被创建，它的大小就是不可以改变的。"><a href="#其长度是确定的。数组一旦被创建，它的大小就是不可以改变的。" class="headerlink" title="其长度是确定的。数组一旦被创建，它的大小就是不可以改变的。"></a>其长度是确定的。数组一旦被创建，它的大小就是不可以改变的。</h5></li>
+<li><h5 id="其元素必须是相同类型，不允许出现混合类型。"><a href="#其元素必须是相同类型，不允许出现混合类型。" class="headerlink" title="其元素必须是相同类型，不允许出现混合类型。"></a>其元素必须是相同类型，不允许出现混合类型。</h5></li>
+<li><h5 id="数组中的原始可以是任何数据类型，包括基本类型和引用类型。"><a href="#数组中的原始可以是任何数据类型，包括基本类型和引用类型。" class="headerlink" title="数组中的原始可以是任何数据类型，包括基本类型和引用类型。"></a>数组中的原始可以是任何数据类型，包括基本类型和引用类型。</h5></li>
+<li><h5 id="数组变量属于引用类型，数组也可以看成是对象，数组中的每个元素相当于该对象的成员变量。"><a href="#数组变量属于引用类型，数组也可以看成是对象，数组中的每个元素相当于该对象的成员变量。" class="headerlink" title="数组变量属于引用类型，数组也可以看成是对象，数组中的每个元素相当于该对象的成员变量。"></a>数组变量属于引用类型，数组也可以看成是对象，数组中的每个元素相当于该对象的成员变量。</h5></li>
+<li><h5 id="数组本身就是对象，java中的对象是在堆中的，因此数组无论保存原始类型还是其他对象类型，数组对象本身是在堆中的。"><a href="#数组本身就是对象，java中的对象是在堆中的，因此数组无论保存原始类型还是其他对象类型，数组对象本身是在堆中的。" class="headerlink" title="数组本身就是对象，java中的对象是在堆中的，因此数组无论保存原始类型还是其他对象类型，数组对象本身是在堆中的。"></a>数组本身就是对象，java中的对象是在堆中的，因此数组无论保存原始类型还是其他对象类型，数组对象本身是在堆中的。</h5></li>
+</ul>
+<h3 id="数组的使用"><a href="#数组的使用" class="headerlink" title="数组的使用"></a>数组的使用</h3><ul>
+<li><h5 id="For-Each循环"><a href="#For-Each循环" class="headerlink" title="For -Each循环"></a>For -Each循环</h5></li>
+<li><h5 id="数组作为方法入参数"><a href="#数组作为方法入参数" class="headerlink" title="数组作为方法入参数"></a>数组作为方法入参数</h5></li>
+<li><h5 id="数组作为返回值"><a href="#数组作为返回值" class="headerlink" title="数组作为返回值"></a>数组作为返回值</h5></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ArrayTres</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">int</span> [] num = &#123;<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>,<span class="number">40</span>,<span class="number">50</span>&#125;;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;i&lt;num.length;i++)&#123;<span class="comment">//打印数组内所有元素</span></span><br><span class="line">        System.out.println(num[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;=========&quot;</span>);</span><br><span class="line">        <span class="type">int</span> <span class="variable">sun</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i&lt; num.length;i++)&#123;</span><br><span class="line">            sun +=num[i];</span><br><span class="line">            <span class="comment">//打印数组元素之和</span></span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;sum&quot;</span>+sun);</span><br><span class="line">        System.out.println(<span class="string">&quot;=========&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> <span class="variable">max</span> <span class="operator">=</span> num[<span class="number">0</span>];</span><br><span class="line">        <span class="comment">//输出数组元素最大值</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;num.length;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (num[i]&gt;max)&#123;</span><br><span class="line">                max=num[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;max=&quot;</span>+max);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="数组的进阶用法"><a href="#数组的进阶用法" class="headerlink" title="数组的进阶用法"></a>数组的进阶用法</h4><p>&#x2F;&#x2F;反转数组</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ArrayTres01</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span>  &#123;</span><br><span class="line">        <span class="type">int</span> [] num = &#123;<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>,<span class="number">40</span>,<span class="number">50</span>&#125;;</span><br><span class="line"><span class="comment">//        //进阶数组 ,jdk 1.5 后 适合打印数组 ，如果操作数组下标元素 不适合。</span></span><br><span class="line"><span class="comment">//        for (int i : num) &#123;</span></span><br><span class="line"><span class="comment">//            System.out.println(i);</span></span><br><span class="line"><span class="comment">//        &#125;</span></span><br><span class="line">       <span class="type">int</span>[] reverse = reverse(num);</span><br><span class="line">        printArray(reverse);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//反转数组</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span>[] reverse(<span class="type">int</span> [] arrays)&#123;</span><br><span class="line">        <span class="type">int</span> [] result = <span class="keyword">new</span> <span class="title class_">int</span>[arrays.length];</span><br><span class="line"></span><br><span class="line">        <span class="comment">//反转数组的操作</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>,j = result.length-<span class="number">1</span>;i&lt; arrays.length;i++,j--)&#123;</span><br><span class="line">            result[j]= arrays[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//打印数组的方法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span>  <span class="keyword">void</span> <span class="title function_">printArray</span><span class="params">(<span class="type">int</span> [] arrays)</span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span> ; i&lt; arrays.length;i++)&#123;</span><br><span class="line">            System.out.println(arrays[i]+<span class="string">&quot; &quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="多维数组"><a href="#多维数组" class="headerlink" title="多维数组"></a>多维数组</h3><h4 id="多维数组可以看成是数组的数组，比如二维数组就是一个特殊的一维数组，其每一个元素都是一个以为数组"><a href="#多维数组可以看成是数组的数组，比如二维数组就是一个特殊的一维数组，其每一个元素都是一个以为数组" class="headerlink" title="多维数组可以看成是数组的数组，比如二维数组就是一个特殊的一维数组，其每一个元素都是一个以为数组"></a>多维数组可以看成是数组的数组，比如二维数组就是一个特殊的一维数组，其每一个元素都是一个以为数组</h4><h4 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a [] [] = <span class="keyword">new</span> <span class="title class_">int</span> [<span class="number">2</span>][<span class="number">5</span>];</span><br></pre></td></tr></table></figure>
+
+<h4 id="解析：以上二维数组a可以看成一个两行五列的数组。"><a href="#解析：以上二维数组a可以看成一个两行五列的数组。" class="headerlink" title="解析：以上二维数组a可以看成一个两行五列的数组。"></a>解析：以上二维数组a可以看成一个两行五列的数组。</h4><h3 id="数组总共有八大排序"><a href="#数组总共有八大排序" class="headerlink" title="数组总共有八大排序!"></a>数组总共有八大排序!</h3><h4 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h4><h5 id="冒泡排序无疑是最为出名的排序算法之一。"><a href="#冒泡排序无疑是最为出名的排序算法之一。" class="headerlink" title="冒泡排序无疑是最为出名的排序算法之一。"></a>冒泡排序无疑是最为出名的排序算法之一。</h5><h5 id="冒泡的代码还是相当简单的-，两层循环，外层冒泡轮数，里层依次比较，江湖人人皆知晓。"><a href="#冒泡的代码还是相当简单的-，两层循环，外层冒泡轮数，里层依次比较，江湖人人皆知晓。" class="headerlink" title="冒泡的代码还是相当简单的 ，两层循环，外层冒泡轮数，里层依次比较，江湖人人皆知晓。"></a>冒泡的代码还是相当简单的 ，两层循环，外层冒泡轮数，里层依次比较，江湖人人皆知晓。</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ArratRMP</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    * 冒泡排序</span></span><br><span class="line"><span class="comment">    * 1.比较数组中，两个相邻的元素，如果第一个数比第二个数大，我们就交换他们的位置</span></span><br><span class="line"><span class="comment">    * 2.每一次比较，都会产生出一个最大，或者最小的数字；</span></span><br><span class="line"><span class="comment">    * 3.下一轮则可以少一次排序！</span></span><br><span class="line"><span class="comment">    * 4.依次排序，知道结束！</span></span><br><span class="line"><span class="comment">    *</span></span><br><span class="line"><span class="comment">    * */</span></span><br><span class="line">    <span class="type">int</span>[] a = &#123;<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">9</span>,<span class="number">8</span>,<span class="number">4</span>,<span class="number">22</span>&#125;;</span><br><span class="line">        <span class="type">int</span> [] sorts = sorts(a);</span><br><span class="line">        <span class="comment">//调用完我们自己写的排序方法以后，返回一个排序后的数组</span></span><br><span class="line">        System.out.println(Arrays.toString(sorts));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span>[] sorts(<span class="type">int</span> [] array)&#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="comment">//外层循环，判断我木门这个要走多少次;</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; array.length-<span class="number">1</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; array.length-<span class="number">1</span>-i; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (array[j+<span class="number">1</span>]&gt;array[j])&#123;</span><br><span class="line">                    temp = array[j];</span><br><span class="line">                    array[j] = array[j+<span class="number">1</span>];</span><br><span class="line">                    array[j+<span class="number">1</span>]=temp;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;<span class="keyword">return</span> array;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h5 id="优化冒泡排序"><a href="#优化冒泡排序" class="headerlink" title="优化冒泡排序"></a>优化冒泡排序</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ArratRMP</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">         * 冒泡排序</span></span><br><span class="line"><span class="comment">         * 1.比较数组中，两个相邻的元素，如果第一个数比第二个数大，我们就交换他们的位置</span></span><br><span class="line"><span class="comment">         * 2.每一次比较，都会产生出一个最大，或者最小的数字；</span></span><br><span class="line"><span class="comment">         * 3.下一轮则可以少一次排序！</span></span><br><span class="line"><span class="comment">         * 4.依次排序，知道结束！</span></span><br><span class="line"><span class="comment">         *</span></span><br><span class="line"><span class="comment">         * */</span></span><br><span class="line">        <span class="type">int</span>[] a = &#123;<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">9</span>,<span class="number">8</span>,<span class="number">4</span>,<span class="number">22</span>&#125;;</span><br><span class="line">        <span class="type">int</span> [] sorts = sorts(a);</span><br><span class="line">        <span class="comment">//调用完我们自己写的排序方法以后，返回一个排序后的数组</span></span><br><span class="line">        System.out.println(Arrays.toString(sorts));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span>[] sorts(<span class="type">int</span> [] array)&#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">boolean</span> <span class="variable">fans</span> <span class="operator">=</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="comment">//外层循环，判断我木门这个要走多少次;</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; array.length-<span class="number">1</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; array.length-<span class="number">1</span>-i; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (array[j+<span class="number">1</span>]&gt;array[j])&#123;</span><br><span class="line">                    temp = array[j];</span><br><span class="line">                    array[j] = array[j+<span class="number">1</span>];</span><br><span class="line">                    array[j+<span class="number">1</span>]=temp;</span><br><span class="line">                    fans=<span class="literal">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;<span class="keyword">if</span> (fans==<span class="literal">false</span>)&#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> array;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="稀疏数组"><a href="#稀疏数组" class="headerlink" title="稀疏数组"></a>稀疏数组</h3><ul>
+<li><h4 id="当一个数组中大部分元素为0，或者为统一值的数组时，可以用稀疏数组来保存该数组。"><a href="#当一个数组中大部分元素为0，或者为统一值的数组时，可以用稀疏数组来保存该数组。" class="headerlink" title="当一个数组中大部分元素为0，或者为统一值的数组时，可以用稀疏数组来保存该数组。"></a>当一个数组中大部分元素为0，或者为统一值的数组时，可以用稀疏数组来保存该数组。</h4></li>
+<li><h4 id="稀疏数组的处理方式是："><a href="#稀疏数组的处理方式是：" class="headerlink" title="稀疏数组的处理方式是："></a>稀疏数组的处理方式是：</h4><ul>
+<li><h5 id="记录数组一共有几行几列，有多少个不同的值"><a href="#记录数组一共有几行几列，有多少个不同的值" class="headerlink" title="记录数组一共有几行几列，有多少个不同的值"></a>记录数组一共有几行几列，有多少个不同的值</h5></li>
+<li><h5 id="把具有不用值的元素和行列及值记录在一个小规模的数组中，从而缩小程序的规模"><a href="#把具有不用值的元素和行列及值记录在一个小规模的数组中，从而缩小程序的规模" class="headerlink" title="把具有不用值的元素和行列及值记录在一个小规模的数组中，从而缩小程序的规模"></a>把具有不用值的元素和行列及值记录在一个小规模的数组中，从而缩小程序的规模</h5></li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ArratRet</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//1.创建了一个二位数组 11* 11 0：没有棋子 1：黑棋 2：白棋</span></span><br><span class="line">        <span class="type">int</span>[][] array = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">11</span>][<span class="number">11</span>];</span><br><span class="line">        array[<span class="number">1</span>][<span class="number">2</span>] = <span class="number">1</span>;</span><br><span class="line">        array[<span class="number">2</span>][<span class="number">3</span>] = <span class="number">2</span>;</span><br><span class="line">        <span class="comment">//输出原始数组</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span>[] ints : array) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> anInt : ints) &#123;</span><br><span class="line">                System.out.print(anInt + <span class="string">&quot;\t&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//转换为稀疏数组保存</span></span><br><span class="line">        <span class="comment">//获取有效值</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt;<span class="number">11</span> ; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt;<span class="number">11</span> ; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (array[i][j]!=<span class="number">0</span>)&#123;</span><br><span class="line">                    sum++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;有效值个数:&quot;</span>+sum);</span><br><span class="line">        <span class="comment">//创建一个稀疏数组的数组</span></span><br><span class="line">        <span class="type">int</span> [][] array1 = <span class="keyword">new</span> <span class="title class_">int</span>[sum+<span class="number">1</span>][<span class="number">3</span>];</span><br><span class="line">        array1[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">11</span>;</span><br><span class="line">        array1[<span class="number">0</span>][<span class="number">1</span>] = <span class="number">11</span>;</span><br><span class="line">        array1[<span class="number">0</span>][<span class="number">2</span>] = sum;</span><br><span class="line">        <span class="comment">//遍历二维数组，将非零的值，存放在稀疏数组中</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; array.length; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt;array[i].length ; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (array[i][j]!=<span class="number">0</span>)&#123;</span><br><span class="line">                    count++;</span><br><span class="line">                    array1[count][<span class="number">0</span>]=i;</span><br><span class="line">                    array1[count][<span class="number">1</span>]=j;</span><br><span class="line">                    array1[count][<span class="number">2</span>]=array[i][j];</span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="comment">//输出稀疏数组</span></span><br><span class="line">        System.out.println(<span class="string">&quot;稀疏数组&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt;array1.length ; i++) &#123;</span><br><span class="line">            System.out.println(array1[i][<span class="number">0</span>]+<span class="string">&quot;\t&quot;</span></span><br><span class="line">                            + array1[i][<span class="number">1</span>]</span><br><span class="line">                         +<span class="string">&quot;\t&quot;</span>+array1[i][<span class="number">2</span>]+<span class="string">&quot;\t&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;=============&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;还原&quot;</span>);</span><br><span class="line">        <span class="comment">//读取稀疏数组</span></span><br><span class="line">        <span class="type">int</span> [][] array2 = <span class="keyword">new</span> <span class="title class_">int</span>[array1[<span class="number">0</span>][<span class="number">0</span>]][array1[<span class="number">0</span>][<span class="number">1</span>]];</span><br><span class="line">        <span class="comment">//给其中的元素还原值</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; array1.length; i++) &#123;</span><br><span class="line">            array2[array1[i][<span class="number">0</span>]][array1[i][<span class="number">1</span>]]=array1[i][<span class="number">2</span>];</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;输出还原的数组&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span>[] ints : array2) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> anInt : ints) &#123;</span><br><span class="line">                System.out.print(anInt + <span class="string">&quot;\t&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+	  <div>
+    
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="../js/src/jquery-1.7.1.min.js"></script>
+  <script src="../js/src/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../css/sweetalert.mini.css">
+
+
+  </p>
+  <p style="text-align:center;color:#bfbfbf;"> <i class="fa fa-creative-commons"></i><span style="text-align:center;color:#bfbfbf;"> 版权声明：</span> 本网站所有文章除特别声明外，著作权归作者所有。转载请注明出处！</p>  
+</div>
+
+    
+	  </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="../images/wechat.png" alt=" 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+		<div> <div>
+ <div style="text-align:center;color:#bfbfbf;font-size:16px;">
+	<span>-------- 本文结束 </span> 
+		<i class="fa fa-paw"></i> 
+			<span> 感谢阅读 --------</span> 
+			</div> 
+			
+			</div> </div>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"><i class="fa fa-tag"></i> 笔记</a>
+          
+            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/1a147173.html" rel="next" title="html基础">
+                <i class="fa fa-chevron-left"></i> html基础
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/5d966776.html" rel="prev" title="内存分析堆、栈、方法区">
+                内存分析堆、栈、方法区 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="" />
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">82</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">1.</span> <span class="nav-text">数组的定义</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E6%98%AF%E7%9B%B8%E5%90%8C%E7%B1%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E7%9A%84%E6%9C%89%E5%BA%8F%E9%9B%86%E5%90%88"><span class="nav-number">1.0.1.</span> <span class="nav-text">数组是相同类型数据的有序集合</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E6%8F%8F%E8%BF%B0%E7%9A%84%E6%98%AF%E7%9B%B8%E5%90%8C%E7%B1%BB%E5%9E%8B%E7%9A%84%E8%8B%A5%E5%B9%B2%E4%B8%AA%E6%95%B0%E6%8D%AE%EF%BC%8C%E6%8C%89%E7%85%A7%E4%B8%80%E5%AE%9A%E7%9A%84%E5%85%88%E5%90%8E%E9%A1%BA%E5%BA%8F%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88%E8%80%8C%E6%88%90%E3%80%82"><span class="nav-number">1.0.2.</span> <span class="nav-text">数组描述的是相同类型的若干个数据，按照一定的先后顺序排列组合而成。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%85%B6%E4%B8%AD%EF%BC%8C%E6%AF%8F%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E7%A7%B0%E4%BD%9C%E4%B8%80%E4%B8%AA%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%EF%BC%8C%E6%AF%8F%E4%B8%AA%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E5%8F%AF%E4%BB%A5%E9%80%9A%E8%BF%87%E4%B8%80%E4%B8%AA%E4%B8%8B%E6%A0%87%E6%9D%A5%E8%AE%BF%E9%97%AE%E4%BB%96%E4%BB%AC%E3%80%82"><span class="nav-number">1.0.3.</span> <span class="nav-text">其中，每一个数据称作一个数组元素，每个数组元素可以通过一个下标来访问他们。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E5%A3%B0%E6%98%8E%E5%88%9B%E5%BB%BA"><span class="nav-number">2.</span> <span class="nav-text">数组声明创建</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A6%96%E5%85%88%E5%BF%85%E9%A1%BB%E5%A3%B0%E6%98%8E%E6%95%B0%E7%BB%84%E5%8F%98%E9%87%8F%EF%BC%8C%E6%89%8D%E8%83%BD%E5%9C%A8%E7%A8%8B%E5%BA%8F%E4%B8%AD%E4%BD%BF%E7%94%A8%E6%95%B0%E7%BB%84%E3%80%82"><span class="nav-number">2.1.</span> <span class="nav-text">首先必须声明数组变量，才能在程序中使用数组。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java%E8%AF%AD%E8%A8%80%E4%BD%BF%E7%94%A8new%E6%93%8D%E4%BD%9C%E7%AC%A6%E6%9D%A5%E5%88%9B%E5%BB%BA%E6%95%B0%E7%BB%84%EF%BC%8C%E8%AF%AD%E6%B3%95%E5%A6%82%E4%B8%8B%EF%BC%9A"><span class="nav-number">2.2.</span> <span class="nav-text">Java语言使用new操作符来创建数组，语法如下：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E5%85%83%E7%B4%A0%E6%98%AF%E9%80%9A%E8%BF%87%E7%B4%A2%E5%BC%95%E8%AE%BF%E9%97%AE%E7%9A%84%EF%BC%8C%E6%95%B0%E7%BB%84%E7%B4%A2%E5%BC%95-%E4%B8%8B%E6%A0%87%E5%80%BC-%E4%BB%8E0%E5%BC%80%E5%A7%8B%E3%80%82"><span class="nav-number">2.3.</span> <span class="nav-text">数组的元素是通过索引访问的，数组索引(下标值)从0开始。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E6%95%B0%E7%BB%84%E7%9A%84v%E9%95%BF%E5%BA%A6-arrays-length"><span class="nav-number">2.4.</span> <span class="nav-text">获取数组的v长度 arrays.length</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E6%B2%A1%E6%9C%89%E7%BB%99%E6%95%B0%E7%BB%84%E6%9F%90%E4%B8%AA%E5%85%83%E7%B4%A0%E8%B5%8B%E5%80%BC%E7%9A%84%E8%AF%9D-%E9%BB%98%E8%AE%A4%E5%80%BC-%E4%B8%BA-%E7%B1%BB%E5%9E%8B%E7%9A%84%E9%BB%98%E8%AE%A4%E5%80%BC"><span class="nav-number">2.5.</span> <span class="nav-text">如果没有给数组某个元素赋值的话 默认值 为 类型的默认值</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E7%A7%8D%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">3.</span> <span class="nav-text">三种初始化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">3.1.</span> <span class="nav-text">静态初始化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">3.2.</span> <span class="nav-text">动态初始化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E9%BB%98%E8%AE%A4%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">3.3.</span> <span class="nav-text">数组的默认初始化</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E6%98%AF%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B%EF%BC%8C%E4%BB%96%E7%9A%84%E5%85%83%E7%B4%A0%E7%9B%B8%E5%BD%93%E4%BA%8E%E7%B1%BB%E7%9A%84%E5%AE%9E%E4%BE%8B%E5%8F%98%E9%87%8F%EF%BC%8C%E5%9B%A0%E6%AD%A4%E6%95%B0%E7%BB%84%E4%B8%80%E7%BB%8F%E5%88%86%E9%85%8D%E7%A9%BA%E9%97%B4%EF%BC%8C%E5%85%B6%E4%B8%AD%E6%AF%8F%E4%B8%AA%E5%85%83%E7%B4%A0%E4%B9%9F%E8%A2%AB%E6%8C%89%E7%85%A7%E5%AE%9E%E4%BE%8B%E5%8F%98%E9%87%8F%E5%90%8C%E6%A0%B7%E7%9A%84%E6%96%B9%E5%BC%8F%E8%A2%AB%E9%9A%90%E5%BC%8F%E5%88%9D%E5%A7%8B%E5%8C%96%E3%80%82"><span class="nav-number">3.3.1.</span> <span class="nav-text">数组是引用类型，他的元素相当于类的实例变量，因此数组一经分配空间，其中每个元素也被按照实例变量同样的方式被隐式初始化。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E5%9B%9B%E4%B8%AA%E5%9F%BA%E6%9C%AC%E7%89%B9%E7%82%B9"><span class="nav-number">4.</span> <span class="nav-text">数组的四个基本特点</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%85%B6%E9%95%BF%E5%BA%A6%E6%98%AF%E7%A1%AE%E5%AE%9A%E7%9A%84%E3%80%82%E6%95%B0%E7%BB%84%E4%B8%80%E6%97%A6%E8%A2%AB%E5%88%9B%E5%BB%BA%EF%BC%8C%E5%AE%83%E7%9A%84%E5%A4%A7%E5%B0%8F%E5%B0%B1%E6%98%AF%E4%B8%8D%E5%8F%AF%E4%BB%A5%E6%94%B9%E5%8F%98%E7%9A%84%E3%80%82"><span class="nav-number">4.0.1.</span> <span class="nav-text">其长度是确定的。数组一旦被创建，它的大小就是不可以改变的。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%85%B6%E5%85%83%E7%B4%A0%E5%BF%85%E9%A1%BB%E6%98%AF%E7%9B%B8%E5%90%8C%E7%B1%BB%E5%9E%8B%EF%BC%8C%E4%B8%8D%E5%85%81%E8%AE%B8%E5%87%BA%E7%8E%B0%E6%B7%B7%E5%90%88%E7%B1%BB%E5%9E%8B%E3%80%82"><span class="nav-number">4.0.2.</span> <span class="nav-text">其元素必须是相同类型，不允许出现混合类型。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E5%8E%9F%E5%A7%8B%E5%8F%AF%E4%BB%A5%E6%98%AF%E4%BB%BB%E4%BD%95%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%EF%BC%8C%E5%8C%85%E6%8B%AC%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B%E3%80%82"><span class="nav-number">4.0.3.</span> <span class="nav-text">数组中的原始可以是任何数据类型，包括基本类型和引用类型。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E5%8F%98%E9%87%8F%E5%B1%9E%E4%BA%8E%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B%EF%BC%8C%E6%95%B0%E7%BB%84%E4%B9%9F%E5%8F%AF%E4%BB%A5%E7%9C%8B%E6%88%90%E6%98%AF%E5%AF%B9%E8%B1%A1%EF%BC%8C%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%AF%8F%E4%B8%AA%E5%85%83%E7%B4%A0%E7%9B%B8%E5%BD%93%E4%BA%8E%E8%AF%A5%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E3%80%82"><span class="nav-number">4.0.4.</span> <span class="nav-text">数组变量属于引用类型，数组也可以看成是对象，数组中的每个元素相当于该对象的成员变量。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E6%9C%AC%E8%BA%AB%E5%B0%B1%E6%98%AF%E5%AF%B9%E8%B1%A1%EF%BC%8Cjava%E4%B8%AD%E7%9A%84%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%9C%A8%E5%A0%86%E4%B8%AD%E7%9A%84%EF%BC%8C%E5%9B%A0%E6%AD%A4%E6%95%B0%E7%BB%84%E6%97%A0%E8%AE%BA%E4%BF%9D%E5%AD%98%E5%8E%9F%E5%A7%8B%E7%B1%BB%E5%9E%8B%E8%BF%98%E6%98%AF%E5%85%B6%E4%BB%96%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%9E%8B%EF%BC%8C%E6%95%B0%E7%BB%84%E5%AF%B9%E8%B1%A1%E6%9C%AC%E8%BA%AB%E6%98%AF%E5%9C%A8%E5%A0%86%E4%B8%AD%E7%9A%84%E3%80%82"><span class="nav-number">4.0.5.</span> <span class="nav-text">数组本身就是对象，java中的对象是在堆中的，因此数组无论保存原始类型还是其他对象类型，数组对象本身是在堆中的。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">5.</span> <span class="nav-text">数组的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#For-Each%E5%BE%AA%E7%8E%AF"><span class="nav-number">5.0.1.</span> <span class="nav-text">For -Each循环</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E4%BD%9C%E4%B8%BA%E6%96%B9%E6%B3%95%E5%85%A5%E5%8F%82%E6%95%B0"><span class="nav-number">5.0.2.</span> <span class="nav-text">数组作为方法入参数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E4%BD%9C%E4%B8%BA%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="nav-number">5.0.3.</span> <span class="nav-text">数组作为返回值</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E8%BF%9B%E9%98%B6%E7%94%A8%E6%B3%95"><span class="nav-number">5.1.</span> <span class="nav-text">数组的进阶用法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="nav-number">6.</span> <span class="nav-text">多维数组</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%9A%E7%BB%B4%E6%95%B0%E7%BB%84%E5%8F%AF%E4%BB%A5%E7%9C%8B%E6%88%90%E6%98%AF%E6%95%B0%E7%BB%84%E7%9A%84%E6%95%B0%E7%BB%84%EF%BC%8C%E6%AF%94%E5%A6%82%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E5%B0%B1%E6%98%AF%E4%B8%80%E4%B8%AA%E7%89%B9%E6%AE%8A%E7%9A%84%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%EF%BC%8C%E5%85%B6%E6%AF%8F%E4%B8%80%E4%B8%AA%E5%85%83%E7%B4%A0%E9%83%BD%E6%98%AF%E4%B8%80%E4%B8%AA%E4%BB%A5%E4%B8%BA%E6%95%B0%E7%BB%84"><span class="nav-number">6.1.</span> <span class="nav-text">多维数组可以看成是数组的数组，比如二维数组就是一个特殊的一维数组，其每一个元素都是一个以为数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="nav-number">6.2.</span> <span class="nav-text">二维数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A7%A3%E6%9E%90%EF%BC%9A%E4%BB%A5%E4%B8%8A%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84a%E5%8F%AF%E4%BB%A5%E7%9C%8B%E6%88%90%E4%B8%80%E4%B8%AA%E4%B8%A4%E8%A1%8C%E4%BA%94%E5%88%97%E7%9A%84%E6%95%B0%E7%BB%84%E3%80%82"><span class="nav-number">6.3.</span> <span class="nav-text">解析：以上二维数组a可以看成一个两行五列的数组。</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E6%80%BB%E5%85%B1%E6%9C%89%E5%85%AB%E5%A4%A7%E6%8E%92%E5%BA%8F"><span class="nav-number">7.</span> <span class="nav-text">数组总共有八大排序!</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F"><span class="nav-number">7.1.</span> <span class="nav-text">冒泡排序</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E6%97%A0%E7%96%91%E6%98%AF%E6%9C%80%E4%B8%BA%E5%87%BA%E5%90%8D%E7%9A%84%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E4%B9%8B%E4%B8%80%E3%80%82"><span class="nav-number">7.1.1.</span> <span class="nav-text">冒泡排序无疑是最为出名的排序算法之一。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%86%92%E6%B3%A1%E7%9A%84%E4%BB%A3%E7%A0%81%E8%BF%98%E6%98%AF%E7%9B%B8%E5%BD%93%E7%AE%80%E5%8D%95%E7%9A%84-%EF%BC%8C%E4%B8%A4%E5%B1%82%E5%BE%AA%E7%8E%AF%EF%BC%8C%E5%A4%96%E5%B1%82%E5%86%92%E6%B3%A1%E8%BD%AE%E6%95%B0%EF%BC%8C%E9%87%8C%E5%B1%82%E4%BE%9D%E6%AC%A1%E6%AF%94%E8%BE%83%EF%BC%8C%E6%B1%9F%E6%B9%96%E4%BA%BA%E4%BA%BA%E7%9A%86%E7%9F%A5%E6%99%93%E3%80%82"><span class="nav-number">7.1.2.</span> <span class="nav-text">冒泡的代码还是相当简单的 ，两层循环，外层冒泡轮数，里层依次比较，江湖人人皆知晓。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BC%98%E5%8C%96%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F"><span class="nav-number">7.1.3.</span> <span class="nav-text">优化冒泡排序</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%80%E7%96%8F%E6%95%B0%E7%BB%84"><span class="nav-number">8.</span> <span class="nav-text">稀疏数组</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BD%93%E4%B8%80%E4%B8%AA%E6%95%B0%E7%BB%84%E4%B8%AD%E5%A4%A7%E9%83%A8%E5%88%86%E5%85%83%E7%B4%A0%E4%B8%BA0%EF%BC%8C%E6%88%96%E8%80%85%E4%B8%BA%E7%BB%9F%E4%B8%80%E5%80%BC%E7%9A%84%E6%95%B0%E7%BB%84%E6%97%B6%EF%BC%8C%E5%8F%AF%E4%BB%A5%E7%94%A8%E7%A8%80%E7%96%8F%E6%95%B0%E7%BB%84%E6%9D%A5%E4%BF%9D%E5%AD%98%E8%AF%A5%E6%95%B0%E7%BB%84%E3%80%82"><span class="nav-number">8.1.</span> <span class="nav-text">当一个数组中大部分元素为0，或者为统一值的数组时，可以用稀疏数组来保存该数组。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A8%80%E7%96%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F%E6%98%AF%EF%BC%9A"><span class="nav-number">8.2.</span> <span class="nav-text">稀疏数组的处理方式是：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%AE%B0%E5%BD%95%E6%95%B0%E7%BB%84%E4%B8%80%E5%85%B1%E6%9C%89%E5%87%A0%E8%A1%8C%E5%87%A0%E5%88%97%EF%BC%8C%E6%9C%89%E5%A4%9A%E5%B0%91%E4%B8%AA%E4%B8%8D%E5%90%8C%E7%9A%84%E5%80%BC"><span class="nav-number">8.2.1.</span> <span class="nav-text">记录数组一共有几行几列，有多少个不同的值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%8A%8A%E5%85%B7%E6%9C%89%E4%B8%8D%E7%94%A8%E5%80%BC%E7%9A%84%E5%85%83%E7%B4%A0%E5%92%8C%E8%A1%8C%E5%88%97%E5%8F%8A%E5%80%BC%E8%AE%B0%E5%BD%95%E5%9C%A8%E4%B8%80%E4%B8%AA%E5%B0%8F%E8%A7%84%E6%A8%A1%E7%9A%84%E6%95%B0%E7%BB%84%E4%B8%AD%EF%BC%8C%E4%BB%8E%E8%80%8C%E7%BC%A9%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%A7%84%E6%A8%A1"><span class="nav-number">8.2.2.</span> <span class="nav-text">把具有不用值的元素和行列及值记录在一个小规模的数组中，从而缩小程序的规模</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <span id="sitetime"></span>
+<script language=javascript>
+	function siteTime(){
+		window.setTimeout("siteTime()", 1000);
+		var seconds = 1000;
+		var minutes = seconds * 60;
+		var hours = minutes * 60;
+		var days = hours * 24;
+		var years = days * 365;
+		var today = new Date();
+		var todayYear = today.getFullYear();
+		var todayMonth = today.getMonth()+1;
+		var todayDate = today.getDate();
+		var todayHour = today.getHours();
+		var todayMinute = today.getMinutes();
+		var todaySecond = today.getSeconds();
+		/* 
+		Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+		year - 作为date对象的年份，为4位年份值
+		month - 0-11之间的整数，做为date对象的月份
+		day - 1-31之间的整数，做为date对象的天数
+		hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+		minutes - 0-59之间的整数，做为date对象的分钟数
+		seconds - 0-59之间的整数，做为date对象的秒数
+		microseconds - 0-999之间的整数，做为date对象的毫秒数
+        */
+		var t1 = Date.UTC(2020,02,13,15,00,00); //北京时间2018-2-13 00:00:00
+		var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+		var diff = t2-t1;
+		var diffYears = Math.floor(diff/years);
+		var diffDays = Math.floor((diff/days)-diffYears*365);
+		var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+		var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+		var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+		document.getElementById("sitetime").innerHTML=" 学习编程 "+/*diffYears+" 年 "+*/diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+		
+	}
+	siteTime();
+</script>
+<div class="Bbeian-info">
+	<a target="_blank" href="https://beian.miit.gov.cn/" style="color:#999;border-bottom:none;" rel="nofollow">赣ICP备2021009289号-1</a>
+
+</div><div class="Bbeian-info" style="display:flex;align-items: center; justify-content: center; border: none;">
+
+<img style="  margin:2px; max-width:16px; max-height:16px; border: none;"src="https://beian.mps.gov.cn/web/assets/logo01.6189a29f.png">
+	<a href="https://beian.mps.gov.cn/#/query/webSearch?code=36048202000074" style="color:#999;border-bottom:none; rel="noreferrer" target="_blank">赣公网安备36048202000074</a>
+</div>
+<div class="copyright">
+  <span class="author" itemprop="copyrightHolder">❤JavaSpansHHT</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+&copy; 2020 &mdash; <span itemprop="copyrightYear">2024</span>
+
+
+  
+</div>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="/js/src/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访问数 <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量 <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+  <div >
+<script type="text/javascript">
+var cnzz_s_tag = document.createElement('script');
+cnzz_s_tag.type = 'text/javascript';
+cnzz_s_tag.async = true;
+cnzz_s_tag.charset = 'utf-8';
+cnzz_s_tag.src = 'https://v1.cnzz.com/z_stat.php?id=1279918317&web_id=1279918317';
+var root_s = document.getElementsByTagName('script')[0];
+root_s.parentNode.insertBefore(cnzz_s_tag, root_s);</script>
+  </div>
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/AshinWang/SimpleValine@v0.1/SimpleValine.min.js"></script>
+
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '2EQW4wLvpASdRx4OUCWJHPLm-gzGzoHsz',
+        appKey: 'DVAudtdxaIobhdXo0bcr4j6Y',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>
